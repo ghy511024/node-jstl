@@ -1,19 +1,21 @@
 /**
  * Created by ghy on 2017/11/17.
  */
+const JspReader = require("./JspReader");
+const Parser = require("./Parser");
 class Compiler {
-    compile () {
-        this.generateJS ();
+    constructor(baseDir) {
+        this.baseDir = baseDir
     }
 
-    generateJS () {
-        let t1 = t2 = t3 = t4 = 0;
-        this.doParser ("xixi", null);
-
+    compile(filename) {
+        let t1, t2, t3, t4;
+        this.doParser(filename, null);
     }
 
-    doParser (path, parent) {
-        let reader = new JspReader ("文件名");
-        Parser.parse (path, reader, parent)
+    doParser(filename, parent) {
+        let reader = new JspReader(this.baseDir, filename);
+        Parser.parse(filename, reader, parent)
     }
 }
+module.exports = Compiler;

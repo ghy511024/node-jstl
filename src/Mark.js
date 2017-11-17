@@ -5,7 +5,7 @@
  *
  */
 class Mark {
-    constructor (reader, stream, fileid, name, baseDir, encoding) {
+    constructor(reader, stream, fileid, name, baseDir, encoding) {
         this.reader = reader;
         this.baseDir = baseDir;
         this.stream = stream;
@@ -18,8 +18,8 @@ class Mark {
         this.includeStack = [];
     }
 
-    getIncludeMark (inCursor, inLine, inCol, inFileid, name, inBaseDir, inEncoding, inStream) {
-        let mark = new Mark (null, inStream, inFileid, name, inBaseDir, inEncoding);
+    getIncludeMark(inCursor, inLine, inCol, inFileid, name, inBaseDir, inEncoding, inStream) {
+        let mark = new Mark(null, inStream, inFileid, name, inBaseDir, inEncoding);
         mark.col = inCol;
         mark.cursor = inCursor;
         mark.line = inLine;
@@ -27,7 +27,7 @@ class Mark {
     }
 
     // get one from other
-    copyMark () {
+    copyMark() {
 
     }
 
@@ -40,9 +40,9 @@ class Mark {
      * @param inEncoding {String}
      * @returns null
      */
-    pushStream (inStream, inFileid, name, inBaseDir, inEncoding) {
+    pushStream(inStream, inFileid, name, inBaseDir, inEncoding) {
         // 当前文件mark压栈
-        this.includeStack.push (this.getIncludeMark (this.cursor, this.line, this.fileId, this.fileName, this.baseDir, this.encoding, this.stream))
+        this.includeStack.push(this.getIncludeMark(this.cursor, this.line, this.fileId, this.fileName, this.baseDir, this.encoding, this.stream))
         this.cursor = 0;
         this.line = 1;
         this.col = 1;
@@ -54,11 +54,11 @@ class Mark {
 
     }
 
-    popStream () {
+    popStream() {
 
     }
 
-    showP () {
+    showP() {
 
     }
 }
@@ -75,3 +75,5 @@ Mark.prototype = {
     fileName: "",
     baseDir: "",
 }
+
+module.exports = Mark;

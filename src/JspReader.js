@@ -1,98 +1,126 @@
 /**
  * Created by ghy on 2017/11/17.
  */
+const path = require("path");
+const fs = require("fs");
 
-const Ut = require ("UT");
+const Ut = require("./Ut");
+const Mark = require("./Mark");
+
 class JspReader {
-    constructor (fname) {
+    constructor(baseDir, fname) {
         this.currFileId = 0;
         this.size = 0;
         this.singleFile = false;
-        this.pushFile (fname, "utf-8");
         this.sourceFiles = [];
+        this.pushFile(baseDir, fname, "utf-8");
     }
 
-    getFile (fileId) {
+    getFile(fileId) {
         return this.sourceFiles[fileId];
     }
 
-    hasMoreInput () {
+    hasMoreInput() {
+        if (this.current.cursor >= this.current.length) {
+            if (this.singleFile) {
+                return false
+            }
+            while (this.popFile()) {
+                if (this.current.cursor < this.current.stream.length) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    nextChar() {
 
     }
 
-    nextChar () {
+    pushChar() {
 
     }
 
-    pushChar () {
+    getText() {
 
     }
 
-    getText () {
-
-    }
-
-    pushFile (fname, encoding, reader) {
+    pushFile(baseDir, fname, encoding, reader) {
         let longName = fname;
-        let fileid = this.registerSourceFile (longName);
+        let fileid = this.registerSourceFile(longName);
         if (fileid == -1) {
             //TODO 报错异常
         }
         this.currFileId = fileid;
-        let fileStr = fs.readFileSync (filePath, "utf-8");
-        let charArray = fileStr.split ("");
+        let absPath = path.join(baseDir, longName)
+        console.log(absPath)
+        let fileStr = fs.readFileSync(absPath, "utf-8");
+        let charArray = fileStr.split("");
         try {
             if (this.current == null) {
 
-                this.current = new Mark (this, charArray, fileid, this.getFile (fileid), "utf-8")
+                this.current = new Mark(this, charArray, fileid, this.getFile(fileid), "utf-8")
             } else {
-                this.current.pushStream (charArray, fileid, this.getFile (fileid), longName, "utf-8");
+                this.current.pushStream(charArray, fileid, this.getFile(fileid), longName, "utf-8");
             }
+            console.log(charArray.length)
         }
         catch (e) {
-
+            console.log(e);
         }
     }
 
-    popFile () {
+    popFile() {
+        if (this.current == null || this.currFileId < 0) {
+            return fasle;
+        }
+        let fname = this.getFile(this.currFileId);
+        this.currFileId =
 
     }
 
-    mark () {
+    mark() {
 
     }
 
-    reset () {
+    reset() {
 
     }
 
-    peekChar () {
+    peekChar() {
 
     }
 
-    registerSourceFile (fileName) {
-        if (Ut.arrayContain (this.sourceFiles, fileName)) {
+    registerSourceFile(fileName) {
+        if (Ut.arrayContain(this.sourceFiles, fileName)) {
             return -1;
         } else {
-            this.sourceFiles.push (fileName);
+            this.sourceFiles.push(fileName);
         }
-        return sourceFiles.length - 1;
+        return this.sourceFiles.length - 1;
     }
 
-
-    skipUntilETag () {
-
+    unregisterSourceFile(fileName) {
+        if (Ut.arrayContain(this.sourceFiles, fileName)) {
+            return -1;
+        }
     }
 
-    isSpace () {
-
-    }
-
-    parseToken () {
+    skipUntilETag() {
 
     }
 
-    isDelimiter () {
+    isSpace() {
+
+    }
+
+    parseToken() {
+
+    }
+
+    isDelimiter() {
 
     }
 }
@@ -104,3 +132,4 @@ JspReader.prototype = {
     size: 0,
     singleFile: true
 }
+module.exports = JspReader;

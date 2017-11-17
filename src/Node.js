@@ -3,9 +3,12 @@
  */
 
 class Node {
+    constructor() {
 
-    static Root = Root;
+    }
+
 }
+
 Node.prototype = {
     body: null,//<Nodes>
     parent: null,//<Node>
@@ -15,11 +18,13 @@ Node.prototype = {
     localName: "",
     beginJSLine: 0,
     endJSLine: 0,
-    root: Root,
+    root: null,
 }
 
 class Nodes {
+    constructor() {
 
+    }
 }
 Nodes.prototype = {
     list: [],
@@ -28,8 +33,13 @@ Nodes.prototype = {
 }
 
 class Root extends Node {
-
+    constructor() {
+        super();
+    }
 }
 Root.prototype = {
     parentRoot: null,
 }
+Node.Root = Root;
+
+module.exports = Node;
