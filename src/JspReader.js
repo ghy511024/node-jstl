@@ -6,6 +6,7 @@ const fs = require("fs");
 
 const Ut = require("./Ut");
 const Mark = require("./Mark");
+const TagInfo = require("./taglib/TagInfo");
 
 class JspReader {
     constructor(baseDir, fname) {
@@ -20,8 +21,31 @@ class JspReader {
         return this.sourceFiles[fileId];
     }
 
+    showP(msg) {
+        console.log(msg, this.current.line, this.current.col, this.current.cursor)
+    }
+
+    matches(str) {
+        let mark = this.mark();
+        let ch = "";
+        let i = 0;
+        while (i < str.length) {
+            ch = this.nextChar();
+            if (ch != str.charAt(i++)) {
+                this.reset(mark);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 已经测试
+     * @return {Boolean}
+     */
     hasMoreInput() {
-        if (this.current.cursor >= this.current.length) {
+
+        if (this.current.cursor >= this.current.stream.length) {
             if (this.singleFile) {
                 return false
             }
@@ -36,15 +60,34 @@ class JspReader {
     }
 
     nextChar() {
-
+        if (!this.hasMoreInput()) {
+            return null;
+        }
+        let ch = this.current.stream[this.current.cursor];
+        this.current.cursor++;
+        if (ch == '\n') {
+            this.current.line++;
+            this.current.col = 0;
+        } else {
+            this.current.col++;
+        }
+        return ch;
     }
 
     pushChar() {
-
+        this.current.cursor--;
+        this.current.col--;
     }
 
-    getText() {
-
+    getText(start, stop) {
+        let oldstart = this.mark();
+        this.reset(start);
+        let ret = "";
+        while (stop.equals(this.mark())) {
+            ret += this.nextChar();
+        }
+        this.reset(oldstart);
+        return ret;
     }
 
     pushFile(baseDir, fname, encoding, reader) {
@@ -72,25 +115,51 @@ class JspReader {
         }
     }
 
+    matchesETag(tagName) {
+        let mark = this.mark();
+        if (!this.matches("</" + tagName)) {
+            return false;
+        }
+        this.skipSpaces();
+        if (this.nextChar() == '>') {
+            return true;
+        }
+        this.reset(mark);
+        return false;
+    }
+
     popFile() {
         if (this.current == null || this.currFileId < 0) {
-            return fasle;
+            return false;
         }
         let fname = this.getFile(this.currFileId);
-        this.currFileId =
-
+        this.currFileId = this.unregisterSourceFile(fname);
+        if (this.currFileId < -1) {
+            //todo err
+            console.error("jsp.error.file.not.registered", fname)
+        }
+        let previous = this.current.popStream();
+        if (previous != null) {
+            this.master = this.current.baseDir;
+            this.current = previous;
+            return true;
+        }
+        return false;
     }
 
     mark() {
-
+        return Mark.newMark(this.current);
     }
 
-    reset() {
-
+    reset(mark) {
+        this.current = Mark.newMark(mark);
     }
 
     peekChar() {
-
+        if (!this.hasMoreInput()) {
+            return -1;
+        }
+        return this.current.stream[this.current.cursor];
     }
 
     registerSourceFile(fileName) {
@@ -103,27 +172,116 @@ class JspReader {
     }
 
     unregisterSourceFile(fileName) {
-        if (Ut.arrayContain(this.sourceFiles, fileName)) {
+        let index = Ut.getIndexFromArray(this.sourceFiles, fileName)
+        if (index < 0) {
             return -1;
         }
+        this.sourceFiles.splice(index, 1);
+        this.size--;
+        return this.sourceFiles.length - 1;
     }
 
     skipUntilETag() {
 
     }
 
-    isSpace() {
-
-    }
-
     parseToken() {
+        let ret = "";
+        this.skipSpaces();
+        if (!this.hasMoreInput()) {
+            return "";
+        }
+        let ch = this.peekChar();
+        if (!this.isDelimiter()) {
+            while (!this.isDelimiter()) {
+                ch = this.nextChar();
+                if (ch == '\\') {
+                    if (this.peekChar() == '"' || this.peekChar() == '\''
+                        || this.peekChar() == '>' || this.peekChar() == '%') {
+                        ch = nextChar();
+                    }
+                }
+                ret += ch;
+            }
 
+        }
+        console.log("tocken:", ret)
+        return ret;
     }
 
     isDelimiter() {
+        if (!this.isSpace()) {
+            let ch = this.peekChar();
+            if (ch == '=' || ch == '>' || ch == '"' || ch == '\'' || ch == '/') {
+                return true;
+            }
+            if (ch == '-') {
+                let mark = this.mark();
+                if (((ch = this.nextChar()) == '>')
+                    || ((ch == '-') && (this.nextChar() == '>'))) {
+                    this.reset(mark);
+                    return true;
+                } else {
+                    this.reset(mark);
+                    return false;
+                }
+            }
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    /**
+     * 跳过空格
+     * @param null
+     * @return {Ineger}
+     */
+    skipSpaces() {
+        let i = 0;
+        while (this.hasMoreInput() && this.isSpace()) {
+            i++;
+            this.nextChar();
+        }
+        return i;
+    }
+
+    isSpace() {
+        return this.peekChar() <= ' ';
+    }
+
+    /**
+     * 寻找以limit 结束得字符串位置  ，忽略转义符号 '\',当返回时候，reader 得位置将移动到匹配结束位置
+     *
+     * @param limit {String} 需要匹配得结束字符串 比如 单引号 '\''，或者双引号 '"'
+     * @return {Mark} 结束位置
+     */
+    skipUntilIgnoreEsc(limit) {
+        let ret = null;
+        let limlen = limit.length;
+        let ch;
+        let prev = 'x'; // Doesn't matter
+        outer:
+            for (ret = this.mark(), ch = this.nextChar(); ch != null; ret = this.mark(), prev = ch, ch = this.nextChar()) {
+                if (ch == '\\' && prev == '\\') {
+                    ch = null;
+                } else if (ch == limit.charAt(0) && prev != '\\') {
+                    inter:
+                        for (let i = 1; i < limlen; i++) {
+                            if (this.peekChar() == limit.charAt(i)) {
+                                this.nextChar();
+                            } else {
+                                continue outer
+                            }
+                        }
+                    return ret;
+                }
+
+            }
+        return null;
     }
 }
+
 JspReader.prototype = {
     current: null,//Mark
     master: "",
