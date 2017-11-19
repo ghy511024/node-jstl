@@ -135,28 +135,28 @@ class Parser {
         let doubleQuoted = false;
         let curl = 0;
         let ch;
-        while (currentChar != '}' || curl >= 0 || singleQuoted || doubleQuoted) {
+        while (ch != '}' || curl >= 0 || singleQuoted || doubleQuoted) {
             ch = this.reader.nextChar();
-            if (currentChar == '\\' && (singleQuoted || doubleQuoted)) {
+            if (ch == '\\' && (singleQuoted || doubleQuoted)) {
                 this.reader.nextChar();
                 ch = this.reader.nextChar();
             }
             if (ch == null) {
                 console.error("Parser.parseELExpression", typeEL)
             }
-            if (currentChar == '"') {
+            if (ch == '"') {
                 doubleQuoted = !doubleQuoted;
-            } else if (urrentChar == '\'') {
+            } else if (ch == '\'') {
                 singleQuoted = !singleQuoted;
             }
-            else if (currentChar == '{') {
+            else if (ch == '{') {
                 curl++;
-            } else if (currentChar == '}') {
+            } else if (ch == '}') {
                 curl--;
             }
         }
         let text = typeEL + this.reader.getText(this.start, this.reader.mark())
-        new Node.ELExpression(text, start, parent);
+        new Node.ELExpression(text, this.start, parent);
     }
 
     parseOptionalBody(parent, tagName, bodyType) {
