@@ -3,6 +3,8 @@
  */
 const JspReader = require("./JspReader");
 const Parser = require("./Parser");
+const Generator = require("./generator/Generator-Api");
+
 class Compiler {
     constructor(baseDir) {
         this.baseDir = baseDir
@@ -15,7 +17,10 @@ class Compiler {
 
     doParser(filename, parent) {
         let reader = new JspReader(this.baseDir, filename);
-        Parser.parse(filename, reader, parent)
+        let pageNodes = Parser.parse(filename, reader, parent)
+        console.log("=======================构造pagenode 结束==================")
+        Generator.generate("", this, pageNodes);
     }
 }
+
 module.exports = Compiler;

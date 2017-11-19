@@ -5,7 +5,7 @@ class Nodes {
     constructor(root) {
         this.root = root;
         this.list = [];
-        this.list.add(root);
+        this.list.push(root);
     }
 
     add(n) {
@@ -21,6 +21,7 @@ class Nodes {
     visit(v) {
         let iter = this.list;
         let item = iter.pop();
+        console.log(item == null);
         while (item != null) {
             item.accept(v);
             item = iter.pop();
