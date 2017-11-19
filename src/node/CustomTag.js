@@ -1,9 +1,11 @@
 const Node = require("./Node");
 
 class CustomTag extends Node {
-    constructor(qName, prefix, localName, attrs, start, parent) {
+    constructor(qName, prefix, localName, uri, attrs, start, parent) {
         super(qName, localName, attrs, start, parent);
+
         this.prefix = prefix;
+        this.uri = uri;
     }
 }
 

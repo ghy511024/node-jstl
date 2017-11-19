@@ -34,6 +34,14 @@ class Node {
         return this.body;
     }
 
+    /**
+     * @abstract 抽象方法
+     * @param v {Visitor}
+     */
+    accept(v) {
+        v.visit(this);
+    }
+
 }
 
 Node.prototype = {

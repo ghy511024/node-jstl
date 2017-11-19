@@ -16,6 +16,13 @@ class Parser {
         this.start = reader.mark();
     }
 
+    /**
+     * parse 函数入口 非常
+     * @param path {String} 文件绝对路径
+     * @param reader {JspReader} 字符读取处理类实例
+     * @param parent {Node} 字符读取处理类实例
+     * @return {Node.Nodes} page 对象，
+     */
     static parse(path, reader, parent) {
         let parser = new Parser(reader);
         let root = new Node.Root(reader.mark(), parent);
@@ -25,6 +32,11 @@ class Parser {
             parser.parseElements(root);
             i++;
         }
+        if (parent != null) {
+            //todo add Include
+        }
+        let page = new Node.Nodes(root);
+        return page;
     }
 
     parseElements(parent) {
@@ -109,8 +121,17 @@ class Parser {
         // console.log(attrs.data)
         this.reader.skipSpaces();
         if (this.reader.matches("/>")) {
-            //todo 构造tag
+            new Node.CustomTag(
+                tagName,
+                prefix,
+                shortTagName,
+                uri,
+                attrs,
+                this.start,
+                parent);
+            return true;
         }
+        // 有内容
         let tagNode = new Node.CustomTag(
             tagName,
             prefix,
