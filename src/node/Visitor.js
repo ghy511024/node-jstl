@@ -11,7 +11,6 @@ class Visitor {
     }
 
     visit(node) {
-        console.log("父类得 visit")
         this.doVisit(node);
         this.visit(node);
 
