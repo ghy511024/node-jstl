@@ -6,7 +6,7 @@
         ${it2.xixi}-${it2.haha}
         第二层循环
         <c:if test="${a=1&&b!=2||c+3>0&&(d==false)}">
-            我出来了
+            我出来 了
         </c:if>
     </c:forEach>
 </c:forEach>
