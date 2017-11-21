@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fdaabb00-f872-4324-b5a5-4c56e5ce213a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/jsp/x1.jsp" afterPath="$PROJECT_DIR$/views/jsp/x1.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/demojs.js" afterPath="$PROJECT_DIR$/test/demojs.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +62,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="demojs.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="demojs.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/demojs.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <state relative-caret-position="208">
+                  <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -82,7 +82,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="x1.jsp" pinned="false" current-in-tab="true">
+          <file leaf-file-name="x1.jsp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/jsp/x1.jsp">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="128">
@@ -275,9 +275,9 @@
         <option value="$PROJECT_DIR$/src/generator/ValidateVisitor.js" />
         <option value="$PROJECT_DIR$/src/JspReader.js" />
         <option value="$PROJECT_DIR$/src/Parser.js" />
-        <option value="$PROJECT_DIR$/test/demojs.js" />
         <option value="$PROJECT_DIR$/wiki/daily.md" />
         <option value="$PROJECT_DIR$/views/jsp/x1.jsp" />
+        <option value="$PROJECT_DIR$/test/demojs.js" />
       </list>
     </option>
   </component>
@@ -341,6 +341,11 @@
             <path>
               <item name="node-jstl" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-jstl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="node-jstl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node-jstl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-jstl" type="b2602c69:ProjectViewProjectNode" />
@@ -501,12 +506,12 @@
       <workItem from="1510983198079" duration="4468000" />
       <workItem from="1511061746464" duration="46588000" />
       <workItem from="1511185041415" duration="12059000" />
-      <workItem from="1511274723185" duration="10000" />
+      <workItem from="1511274723185" duration="94000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76154000" />
+    <option name="totallyTimeSpent" value="76238000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -519,9 +524,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="265" y="156" width="1707" height="778" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14080288" sideWeight="0.49338374" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14080288" sideWeight="0.49338374" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -958,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/demojs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -990,6 +986,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/demojs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding />
         </state>
       </provider>

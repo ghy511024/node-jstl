@@ -10,7 +10,6 @@ class newjsp_js {
             this.ret += "\n"
         }
         catch (e) {
-
         }
     }
 
@@ -26,18 +25,12 @@ class newjsp_js {
             let _js_eval_c_forEach_0 = forEachIpml.doStartTag();
             if (_js_eval_c_forEach_0 != 0) {
                 do {
-                    //== head 部分输出完毕
-                    //== Body 部分开始输出
                     this.ret += "nnn";
-                    //== body 输出完毕
-
-                    //=== end 部分开始输出
                 }
                 while (true)
             }
         }
         catch (e) {
-
         }
         return false;
         //=== end 部分开始结束
