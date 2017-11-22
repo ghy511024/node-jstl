@@ -3,15 +3,14 @@ const EVAL_BODY_INCLUDE = 1;
 const SKIP_PAGE = 5;
 const EVAL_PAGE = 6;
 
-class ForEachTag {
+const TagSupport = require("./TagSupport");
+
+class ForEachIpml extends TagSupport {
     constructor() {
+        super();
         this.rawItems = null;
         this.end;
         this.begin;
-    }
-
-    setPageContext() {
-
     }
 
     setItems(o) {
@@ -37,6 +36,27 @@ class ForEachTag {
         this.deferredExpression = null;
     }
 
+    discard(n) {
+        let oldIndex = this.index;
+        while (n-- > 0 && !this.atEnd() && this.hasNext()) {
+            this.index++;
+            this.next();
+        }
+        this.index = oldIndex;
+    }
+
+    doAfterBody() {
+        this.index += step - 1;
+        this.count++;
+        if (this.hasNext() && this.atEnd()) {
+            this.index++;
+            this.item = this.next();
+        } else {
+            return SKIP_BODY;
+        }
+        return EVAL_BODY_AGAIN
+    }
+
     prepare() {
 
     }
@@ -47,3 +67,5 @@ class ForEachTag {
         }
     }
 }
+
+module.exports = ForEachIpml;

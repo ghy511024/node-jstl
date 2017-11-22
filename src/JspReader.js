@@ -40,7 +40,7 @@ class JspReader {
     }
 
     /**
-     * 已经测试
+     *
      * @return {Boolean}
      */
     hasMoreInput() {
