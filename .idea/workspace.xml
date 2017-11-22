@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fdaabb00-f872-4324-b5a5-4c56e5ce213a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/writer.js" afterPath="$PROJECT_DIR$/src/writer/writer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser.js" afterPath="$PROJECT_DIR$/src/Parser.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/writer/writer.js" afterPath="$PROJECT_DIR$/src/writer/ServletWriter.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +63,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="writer.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/writer/writer.js">
+          <file leaf-file-name="ServletWriter.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/writer/ServletWriter.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+                <state relative-caret-position="96">
+                  <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -166,7 +167,7 @@
             <entry file="file://$PROJECT_DIR$/src/Parser.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="194">
-                  <caret line="292" column="4" lean-forward="true" selection-start-line="292" selection-start-column="4" selection-end-line="292" selection-end-column="4" />
+                  <caret line="295" column="14" lean-forward="false" selection-start-line="295" selection-start-column="14" selection-end-line="295" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#40#0" expanded="false" />
                     <element signature="n#!!block;n#parseTemplateText#0;n#Parser#0" expanded="false" />
@@ -274,11 +275,12 @@
         <option value="$PROJECT_DIR$/src/generator/GenerateVisitor.js" />
         <option value="$PROJECT_DIR$/src/generator/ValidateVisitor.js" />
         <option value="$PROJECT_DIR$/src/JspReader.js" />
-        <option value="$PROJECT_DIR$/src/Parser.js" />
         <option value="$PROJECT_DIR$/wiki/daily.md" />
         <option value="$PROJECT_DIR$/views/jsp/x1.jsp" />
         <option value="$PROJECT_DIR$/test/demojs.js" />
         <option value="$PROJECT_DIR$/src/writer/writer.js" />
+        <option value="$PROJECT_DIR$/src/Parser.js" />
+        <option value="$PROJECT_DIR$/src/writer/ServletWriter.js" />
       </list>
     </option>
   </component>
@@ -296,8 +298,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="265" />
-    <option name="y" value="156" />
+    <option name="x" value="899" />
+    <option name="y" value="129" />
     <option name="width" value="1707" />
     <option name="height" value="778" />
   </component>
@@ -336,6 +338,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -379,7 +382,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -513,12 +515,13 @@
       <workItem from="1510983198079" duration="4468000" />
       <workItem from="1511061746464" duration="46588000" />
       <workItem from="1511185041415" duration="12059000" />
-      <workItem from="1511274723185" duration="887000" />
+      <workItem from="1511274723185" duration="900000" />
+      <workItem from="1511354792441" duration="2197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77031000" />
+    <option name="totallyTimeSpent" value="79241000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -530,7 +533,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="265" y="156" width="1707" height="778" extended-state="0" />
+    <frame x="899" y="129" width="1707" height="778" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14080288" sideWeight="0.49338374" order="3" side_tool="false" content_ui="combo" />
@@ -630,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -795,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,18 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="292" column="4" lean-forward="true" selection-start-line="292" selection-start-column="4" selection-end-line="292" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="n#!!block;n#parseTemplateText#0;n#Parser#0" expanded="false" />
-            <element signature="n#!!block;n#parseCustomTag#0;n#Parser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wiki/daily.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -1002,10 +990,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/writer/writer.js">
+    <entry file="file://$PROJECT_DIR$/src/Parser.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="194">
+          <caret line="295" column="14" lean-forward="false" selection-start-line="295" selection-start-column="14" selection-end-line="295" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+            <element signature="n#!!block;n#parseTemplateText#0;n#Parser#0" expanded="false" />
+            <element signature="n#!!block;n#parseCustomTag#0;n#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/writer/ServletWriter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
           <folding />
         </state>
       </provider>
