@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fdaabb00-f872-4324-b5a5-4c56e5ce213a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/tag/ForEachSupport.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/tag/forEachIpml.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser.js" afterPath="$PROJECT_DIR$/src/Parser.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/writer/writer.js" afterPath="$PROJECT_DIR$/src/writer/ServletWriter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/ServletWriter.js" afterPath="$PROJECT_DIR$/src/writer/ServletWriter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/demojs.js" afterPath="$PROJECT_DIR$/test/demojs.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,110 +24,128 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5368526">
       <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="GenerateVisitor.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/generator/GenerateVisitor.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
-                  <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Visitor.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/node/Visitor.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="208">
-                  <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Node-Api.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/node/Node-Api.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="demojs.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/demojs.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ServletWriter.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/writer/ServletWriter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="96">
-                  <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="daily.md" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/wiki/daily.md">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="x1.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/jsp/x1.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="CustomTag.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/node/CustomTag.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ELExpression.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/node/ELExpression.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Node.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/node/Node.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="624">
-                  <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#0#40#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="horizontal" split-proportion="0.5">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file leaf-file-name="Node-Api.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/node/Node-Api.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="160">
+                      <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="demojs.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/test/demojs.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="288">
+                      <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="forEachIpml.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/test/tag/forEachIpml.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="176">
+                      <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ForEachSupport.js" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/test/tag/ForEachSupport.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="32">
+                      <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ServletWriter.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/writer/ServletWriter.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="160">
+                      <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="daily.md" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/wiki/daily.md">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="128">
+                      <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="x1.jsp" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/views/jsp/x1.jsp">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="128">
+                      <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="CustomTag.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/node/CustomTag.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="144">
+                      <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="ELExpression.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/node/ELExpression.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="176">
+                      <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="Node.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/node/Node.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="624">
+                      <caret line="41" column="22" lean-forward="false" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+                      <folding>
+                        <element signature="e#0#40#0" expanded="false" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file leaf-file-name="forEachIpml.js" pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/test/tag/forEachIpml.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="144">
+                      <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -277,10 +297,12 @@
         <option value="$PROJECT_DIR$/src/JspReader.js" />
         <option value="$PROJECT_DIR$/wiki/daily.md" />
         <option value="$PROJECT_DIR$/views/jsp/x1.jsp" />
-        <option value="$PROJECT_DIR$/test/demojs.js" />
         <option value="$PROJECT_DIR$/src/writer/writer.js" />
         <option value="$PROJECT_DIR$/src/Parser.js" />
         <option value="$PROJECT_DIR$/src/writer/ServletWriter.js" />
+        <option value="$PROJECT_DIR$/test/demojs.js" />
+        <option value="$PROJECT_DIR$/test/tag/forEachIpml.js" />
+        <option value="$PROJECT_DIR$/test/tag/ForEachSupport.js" />
       </list>
     </option>
   </component>
@@ -354,13 +376,13 @@
             <path>
               <item name="node-jstl" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-jstl" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="writer" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-jstl" type="b2602c69:ProjectViewProjectNode" />
               <item name="node-jstl" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tag" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="node-jstl" type="b2602c69:ProjectViewProjectNode" />
@@ -516,12 +538,12 @@
       <workItem from="1511061746464" duration="46588000" />
       <workItem from="1511185041415" duration="12059000" />
       <workItem from="1511274723185" duration="900000" />
-      <workItem from="1511354792441" duration="2197000" />
+      <workItem from="1511354792441" duration="4515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79241000" />
+    <option name="totallyTimeSpent" value="81559000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -587,26 +609,6 @@
     <select />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/jsp/x1.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
-          <caret line="64" column="39" lean-forward="false" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <element signature="n#!!block;n#parseTemplateText#0;n#Parser#0" expanded="false" />
-            <element signature="n#!!block;n#parseCustomTag#0;n#Parser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IncludeState.js" />
     <entry file="file://$PROJECT_DIR$/src/Ut.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -982,14 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/demojs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1004,8 +998,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/writer/ServletWriter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="160">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/demojs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tag/forEachIpml.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tag/ForEachSupport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding />
         </state>
       </provider>

@@ -1,19 +1,21 @@
 class newjsp_js {
-    outjs() {
+    constructor(){
         this.ret = "";
+    }
+    outjs(data) {
+
         let _jspx_page_context = {};
         try {
-            this.ret += "\r\n\n";
-            if (this._js_metch_c_forEach_0(_js_page_context)) {
-                this.ret;
+            if (this._js_fun_c_forEach_0(_js_page_context)) {
+               return  this.ret;
             }
-            this.ret += "\n"
         }
         catch (e) {
+            console.log(e);
         }
     }
 
-    _js_metch_c_forEach_0(_js_page_context) {
+    _js_fun_c_forEach_0(_js_page_context) {
         let forEachIpml = new forEachIpml();
 
         // 设置变量
