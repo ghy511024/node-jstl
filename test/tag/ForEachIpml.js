@@ -4,26 +4,16 @@ const SKIP_PAGE = 5;
 const EVAL_PAGE = 6;
 
 const TagSupport = require("./TagSupport");
+const ForEachSupport = require("./ForEachSupport");
 
-class ForEachIpml extends TagSupport {
+class ForEachIpml extends ForEachSupport {
     constructor() {
         super();
-        this.rawItems = null;
         this.end;
         this.begin;
     }
 
-    setItems(o) {
-        if (o == null) {
-            this.rawItems = [];
-        } else {
-            this.rawItems = o;
-        }
-    }
 
-    setVar(_id) {
-        this.itemId = _id;
-    }
 
     doStartTag() {
         if (this.end != -1 && this.begin > this.end) {
@@ -58,6 +48,7 @@ class ForEachIpml extends TagSupport {
     }
 
     prepare() {
+        //console.log("sdf")
 
     }
 
