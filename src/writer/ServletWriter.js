@@ -3,7 +3,7 @@ const SPACES = "                          ";
 /**
  * writer 本来应该是最后再写的，前面应该把各种约定定义好
  * */
-const StringWriter = require ("./StringWriter");
+const Writer = require ("./Writer");
 class ServletWriter {
     /**
      * @param writer {StringWriter}
@@ -12,7 +12,7 @@ class ServletWriter {
         this.indent = 0;
         this.vertual_indent = 0;
         this.javaLine = 1;
-        if (writer instanceof StringWriter) {
+        if (writer instanceof Writer) {
             this.writer = writer;
         }
     }
@@ -62,14 +62,14 @@ class ServletWriter {
 
 }
 (function () {
-
-    let swriter = new StringWriter ();
-    let out = new ServletWriter (swriter);
-    out.println ("if(");
-    out.print ("x>0");
-    out.printil ("sdfsdf");
-    out.print (")");
-    console.log (swriter.toString ())
+    //
+    // let swriter = new StringWriter ();
+    // let out = new ServletWriter (swriter);
+    // out.println ("if(");
+    // out.print ("x>0");
+    // out.printil ("sdfsdf");
+    // out.print (")");
+    // console.log (swriter.toString ())
 }) ()
 
 module.exports = ServletWriter;

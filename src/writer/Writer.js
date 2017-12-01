@@ -3,26 +3,40 @@
  * 这个应该是一个抽象类
  *
  */
-const Abstract = require ("../object/Abstract");
+const Abstract = require("../object/Abstract");
+const lineSeparator = "\r\n";
 class Writer extends Abstract {
-
-    print () {
-
+    constructor() {
+        super();
     }
 
-    write (...args) {
-        this.DT ("write", args)
+    print(s) {
+        if (s == null) {
+            s = "null";
+        }
+        this.write(s);
     }
 
-    println () {
-
+    write(...args) {
+        this.DT("write", args)
     }
+
+
+    println(x) {
+        if (x != null) {
+            this.print(x);
+        }
+        console.log("换行操作")
+        this.write(lineSeparator);
+    }
+
+
 
 }
-
-let w = new Writer ();
-w.test (1, "sdf");
-w.test ();
-w.test ({}, [1, 2], "sdf", 3, true);
-w.test (3, true);
+//
+// let w = new Writer();
+// w.test(1, "sdf");
+// w.test();
+// w.test({}, [1, 2], "sdf", 3, true);
+// w.test(3, true);
 module.exports = Writer;
