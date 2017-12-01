@@ -26,9 +26,34 @@ class Mark {
         return mark;
     }
 
+    /**
+     * 判断两个mark 是否相等
+     * @param mark {Mark}
+     * @return {Boolean}
+     */
+    equals(mark) {
+        if (mark instanceof Mark) {
+            return this.reader == mark.reader && this.fileId == mark.fileId
+                && this.cursor == mark.cursor && this.line == mark.line
+                && this.col == mark.col;
+        }
+        return false;
+    }
+
     // get one from other
     copyMark() {
 
+    }
+
+    static newMark(inMark) {
+        let mark = new Mark(inMark.reader, inMark.stream, inMark.fileId, inMark.baseDir, inMark.encoding);
+        mark.line = inMark.line;
+        mark.col = inMark.col;
+        mark.cursor = inMark.cursor;
+        for (let i = 0; i < inMark.includeStack.length; i++) {
+            mark.includeStack.push(inMark.includeStack[i]);
+        }
+        return mark;
     }
 
     /**
@@ -61,7 +86,13 @@ class Mark {
     showP() {
 
     }
+
+
+    getInfo() {
+        return "(" + this.line + "-" + this.col + "-" + this.cursor + ")";
+    }
 }
+
 Mark.prototype = {
     reader: null,
     cursor: 1,

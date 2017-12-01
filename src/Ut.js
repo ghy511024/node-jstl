@@ -11,6 +11,24 @@ var Ut = {
             }
         }
         return ret;
+    },
+    getIndexFromArray(array, item) {
+        let ret = -1;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] === item) {
+                ret = i;
+                break;
+            }
+        }
+        return ret;
+    },
+    isLetter(ch) {
+        //todo 校验是否为字母,需要优化
+        return /[A-Za-z]/.test(ch);
+    },
+    isDigit(ch) {
+        //todo 校验是否为数组,需要优化
+        return /0-9/.test(ch);
     }
 }
 module.exports = Ut;
