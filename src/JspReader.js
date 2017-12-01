@@ -40,7 +40,7 @@ class JspReader {
     }
 
     /**
-     * 已经测试
+     *
      * @return {Boolean}
      */
     hasMoreInput() {
@@ -83,8 +83,10 @@ class JspReader {
         let oldstart = this.mark();
         this.reset(start);
         let ret = "";
-        while (stop.equals(this.mark())) {
+        let b=0;
+        while (!stop.equals(this.mark())) {
             ret += this.nextChar();
+            b++;
         }
         this.reset(oldstart);
         return ret;

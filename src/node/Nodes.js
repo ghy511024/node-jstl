@@ -21,7 +21,6 @@ class Nodes {
     visit(v) {
         let iter = this.list;
         let item = iter.pop();
-        console.log(item == null);
         while (item != null) {
             item.accept(v);
             item = iter.pop();

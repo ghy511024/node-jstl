@@ -288,6 +288,7 @@ class Parser {
      * @param null
      * @return {String}
      */
+
     parseName() {
         let ch = this.reader.peekChar();
         if (Ut.isLetter(ch) || ch == '_' || ch == ':') {

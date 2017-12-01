@@ -39,7 +39,6 @@ class Node {
      * @param v {Visitor}
      */
     accept(v) {
-        console.log(".........")
         v.visit(this);
 
     }
