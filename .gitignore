@@ -1,27 +1,7 @@
-# OS X
-.DS_Store*
-Icon?
-._*
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Linux
-.directory
-*~
-
-
-# npm
-node_modules
-*.log
-*.gz
-
-
-# Coveralls
-coverage
-
-# Benchmarking
-benchmarks/graphs
+# Created by .ignore support plugin (hsz.mobi)
 .idea
+/fangapp/css/dev/.sass-cache/
+/.sass-cache/
+/node_modules
+*/node_modules
+.DS_Store
