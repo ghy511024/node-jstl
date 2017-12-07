@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a143e032-4bab-4371-90ac-6225019be936" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/cyl.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jstl.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Compiler.js" afterPath="$PROJECT_DIR$/src/Compiler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser.js" afterPath="$PROJECT_DIR$/src/Parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generator/GenerateVisitor.js" afterPath="$PROJECT_DIR$/src/generator/GenerateVisitor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generator/Generator.js" afterPath="$PROJECT_DIR$/src/generator/Generator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/CustomTag.js" afterPath="$PROJECT_DIR$/src/node/CustomTag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/ELExpression.js" afterPath="$PROJECT_DIR$/src/node/ELExpression.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/Nodes.js" afterPath="$PROJECT_DIR$/src/node/Nodes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/Root.js" afterPath="$PROJECT_DIR$/src/node/Root.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/TemplateText.js" afterPath="$PROJECT_DIR$/src/node/TemplateText.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/taglib/Attributes.js" afterPath="$PROJECT_DIR$/src/taglib/Attributes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/FileWriter.js" afterPath="$PROJECT_DIR$/src/writer/FileWriter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/ServletWriter.js" afterPath="$PROJECT_DIR$/src/writer/ServletWriter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/demojs.js" afterPath="$PROJECT_DIR$/test/demojs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/writer/ghy.txt" afterPath="$PROJECT_DIR$/test/writer/ghy.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/jsp/x1.jsp" afterPath="$PROJECT_DIR$/views/jsp/x1.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tagImpl/ForEach.js" afterPath="$PROJECT_DIR$/src/tagImpl/ForEach.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,8 +74,8 @@
           <file leaf-file-name="Attributes.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/taglib/Attributes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="224">
-                  <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+                <state relative-caret-position="336">
+                  <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -160,8 +140,8 @@
           <file leaf-file-name="ForEach.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/tagImpl/ForEach.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+                <state relative-caret-position="256">
+                  <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -230,8 +210,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="298" />
-    <option name="y" value="220" />
+    <option name="x" value="289" />
+    <option name="y" value="100" />
     <option name="width" value="1595" />
     <option name="height" value="866" />
   </component>
@@ -457,24 +437,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512628640340</updated>
-      <workItem from="1512628641549" duration="8544000" />
+      <workItem from="1512628641549" duration="9323000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8544000" />
+    <option name="totallyTimeSpent" value="9323000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="298" y="220" width="1595" height="866" extended-state="0" />
-    <editor active="true" />
+    <frame x="289" y="100" width="1595" height="866" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3628922" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3628922" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16570328" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -721,21 +700,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/taglib/Attributes.js">
+    <entry file="file://$PROJECT_DIR$/src/tagImpl/ForEach.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="256">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tagImpl/ForEach.js">
+    <entry file="file://$PROJECT_DIR$/src/taglib/Attributes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
+        <state relative-caret-position="336">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

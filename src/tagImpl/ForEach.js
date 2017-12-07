@@ -13,7 +13,6 @@ class ForEach {
         let _var = attr.getValue ("var");
         let begin = attr.getValue ("begin");
         let end = attr.getValue ("end");
-        
     }
 
 }
