@@ -5,9 +5,7 @@ class demojs {
     constructor() {
         this.ret = "";
     }
-
     outjs(data) {
-
         let _jspx_page_context = new PageContext(data);
         try {
             if (this._js_fun_c_forEach_0(_js_page_context)) {
