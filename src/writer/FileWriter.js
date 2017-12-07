@@ -1,20 +1,20 @@
 /**
  * Created by ghy on 2017/12/1.
+ * http://nodejs.cn/api/fs.html#fs_fs_writefilesync_file_data_options
  */
-const fs = require("fs");
-const Writer = require("./Writer");
+
+const fs = require ("fs");
+const Writer = require ("./Writer");
 class FileWriter extends Writer {
-    constructor(outFilePath) {
-        super();
+    constructor (outFilePath) {
+        super ();
         this.filePath = outFilePath;
+        fs.writeFileSync (this.filePath, "");
     }
 
-    print(s) {
-        this.write(s);
-    }
-
-    _write_str(s) {
-        fs.appendFileSync(this.filePath, s);
+    _write_str (s) {
+        fs.appendFileSync (this.filePath, s);
     }
 
 }
+module.exports = FileWriter;

@@ -8,8 +8,6 @@ const lineSeparator = "\r\n";
 class Writer extends Abstract {
     constructor() {
         super();
-        this.str = "";
-        this.count = 0;
     }
 
     print(s) {
@@ -23,11 +21,8 @@ class Writer extends Abstract {
         this.DT("write", args)
     }
 
-    _write_str(s) {
-        this.str += str;
-    }
 
-    println() {
+    println(x) {
         if (x != null) {
             this.print(x);
         }
@@ -35,9 +30,7 @@ class Writer extends Abstract {
         this.write(lineSeparator);
     }
 
-    toString() {
-        return this.str;
-    }
+
 
 }
 //

@@ -1,5 +1,5 @@
-const Compiler = require("../Compiler")
-const GenerateVisitor = require("./GenerateVisitor");
+const Compiler = require ("../Compiler")
+const GenerateVisitor = require ("./GenerateVisitor");
 
 /**
  * @param outpath {String} 输出绝对路径
@@ -8,13 +8,13 @@ const GenerateVisitor = require("./GenerateVisitor");
  * @return
  */
 class Generator {
-    constructor() {
+    constructor () {
 
     }
 
-    static generate(outpath, compiler, page) {
-        let gen = new Generator(outpath, compiler);
-        page.visit(new GenerateVisitor());
+    static generate (outpath, compiler, page, out) {
+        let gen = new Generator (outpath, compiler);
+        page.visit (new GenerateVisitor (out));
     }
 }
 

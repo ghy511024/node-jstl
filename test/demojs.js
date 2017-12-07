@@ -5,9 +5,7 @@ class demojs {
     constructor() {
         this.ret = "";
     }
-
     outjs(data) {
-
         let _jspx_page_context = new PageContext(data);
         try {
             if (this._js_fun_c_forEach_0(_js_page_context)) {
@@ -33,7 +31,7 @@ class demojs {
             if (_js_eval_c_forEach_0 != 0) {
                 do {
                     this.ret += "nnn";
-                    int evalDoAfterBody = js_th_c_forEach.doAfterBody();
+                    let evalDoAfterBody = js_th_c_forEach.doAfterBody();
                 }
                 while (true)
             }

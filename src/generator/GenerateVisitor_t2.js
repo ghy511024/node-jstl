@@ -1,10 +1,11 @@
 const Node = require("../node/Node-Api");
-
+const forEach = require("../tagImpl/ForEach");
 class GenerateVisitor extends Node.Visitor {
-    constructor(out) {
+    constructor(out, _context) {
         super();
         this.tagVarNumbers = {};
         this.out = out;
+        this._context = _context;
     }
 
     /**
@@ -38,7 +39,9 @@ class GenerateVisitor extends Node.Visitor {
         console.log(n.uri)
         console.log(n.attrs)
         if (n.qName == "forEach") {
+            ForEach.parse(node, _context, out, function () {
 
+            })
         }
         this.visitBody(n)
 
