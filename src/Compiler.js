@@ -1,14 +1,9 @@
 /**
  * Created by ghy on 2017/11/17.
  */
-const path=require("path")
-const JspReader = require("./JspReader");
-const Parser = require("./Parser");
-// const Generator = require("./generator/Generator-Api");
 const Generator = require("./generator/Generator-Api");
 const JspReader = require ("./JspReader");
 const Parser = require ("./Parser");
-const Generator = require ("./generator/Generator-Api");
 const path = require ("path");
 const FileWriter=require("./writer/FileWriter")
 const ServletWriter=require("./writer/ServletWriter")
@@ -31,9 +26,7 @@ class Compiler {
         console.log ("=======================构造gennerator 访问 结束==================")
 
         let outPath = path.join (__dirname, "./out/xixi.jsp");
-        let fileWriter = new FileWriter (outPath);
-        let out = new ServletWriter (fileWriter);
-        Generator.generate ("", this, pageNodes,out);
+        Generator.generate (outPath, this, pageNodes);
     }
 
     testNode (pageNodes) {

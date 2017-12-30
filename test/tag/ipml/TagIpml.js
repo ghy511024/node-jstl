@@ -12,9 +12,6 @@ class ForEachIpml extends ForEachSupport {
         this.end;
         this.begin;
     }
-
-
-
     doStartTag() {
         if (this.end != -1 && this.begin > this.end) {
             return

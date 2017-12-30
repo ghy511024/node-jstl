@@ -12,9 +12,6 @@ class ForEachIpml extends ForEachSupport {
         this.end;
         this.begin;
     }
-
-
-
     doStartTag() {
         if (this.end != -1 && this.begin > this.end) {
             return
@@ -36,7 +33,7 @@ class ForEachIpml extends ForEachSupport {
     }
 
     doAfterBody() {
-        this.index += step - 1;
+        this.index += this.step - 1;
         this.count++;
         if (this.hasNext() && this.atEnd()) {
             this.index++;

@@ -33,7 +33,6 @@ class demojs {
             if (_js_eval_c_forEach_0 != Tag.SKIP_BODY) {
                 do {
                     this.ret += "nnn";
-<<<<<<< HEAD
                     // 结束判断标志
                     let evalDoAfterBody = js_th_c_forEach.doAfterBody();
                     if (evalDoAfterBody != Tag.EVAL_BODY_AGAIN) {
@@ -43,9 +42,6 @@ class demojs {
                 while (true);
                 if (_js_eval_c_forEach_0.doEndTag() == Tag.SKIP_PAGE) {
                     return true;
-=======
-                    let evalDoAfterBody = js_th_c_forEach.doAfterBody();
->>>>>>> 2fa2c09689343d298ea53af998cc99080894439d
                 }
             }
         }

@@ -30,6 +30,7 @@ class ForEachSupport extends TagSupport {
             this.rawItems = o;
         }
     }
+
     setVar(_id) {
         this.itemId = _id;
     }
@@ -47,6 +48,21 @@ class ForEachSupport extends TagSupport {
 
         }
 
+    }
+
+    /**
+     * @param firstTime{Boolean}
+     * */
+    exposeVariables(firstTime) {
+        if (this.itemId != null) {
+            if (this.getCurrent() == null) {
+                this.pageContext.removeAttribute(this.itemId)
+            } else if (this.deferredExpression != null) {
+
+            } else {
+                this.pageContext.setAttribute(this.itemId, this.getCurrent())
+            }
+        }
     }
 }
 
