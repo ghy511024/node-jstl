@@ -1,8 +1,8 @@
-const Node = require("../node/Node-Api");
+const Node = require ("../node/Node-Api");
 
 class GenerateVisitor extends Node.Visitor {
-    constructor(out) {
-        super();
+    constructor (out) {
+        super ();
         this.tagVarNumbers = {};
         this.out = out;
     }
@@ -10,59 +10,59 @@ class GenerateVisitor extends Node.Visitor {
     /**
      * 覆盖父类visit 抽象方法
      */
-    visit(n) {
+    visit (n) {
         // console.log (n.name);
         if (n instanceof Node.CustomTag) {
-            this._vCustomTag(n);
+            this._vCustomTag (n);
         } else if (n instanceof Node.Nodes) {
-            this._vNodes(n);
+            this._vNodes (n);
         }
         else if (n instanceof Node.Root) {
-            this._vRoot(n);
+            this._vRoot (n);
         } else if (n instanceof Node.TemplateText) {
-            this._vTemplateText(n);
+            this._vTemplateText (n);
 
         } else if (n instanceof Node.ELExpression) {
-            this._vELExpression(n);
+            this._vELExpression (n);
         }
     }
 
     /**
      * 不知道是不是拆出去好一点，先不拆，规模不大
      */
-    _vCustomTag(n) {
-        console.log("_vCustomTag")
-        console.log(n.qName)
-        console.log(n.prefix)
-        console.log(n.localName)
-        console.log(n.uri)
-        console.log(n.attrs)
+    _vCustomTag (n) {
+        console.log ("_vCustomTag")
+        console.log (n.qName)
+        console.log (n.prefix)
+        console.log (n.localName)
+        console.log (n.uri)
+        console.log (n.attrs)
         if (n.qName == "forEach") {
 
         }
-        this.visitBody(n)
+        this.visitBody (n)
 
     }
 
-    _vNodes(n) {
+    _vNodes (n) {
         // console.log ("_vNodes")
     }
 
-    _vRoot(n) {
+    _vRoot (n) {
         // console.log ("_vRoot")
-        this.visitBody(n)
+        this.visitBody (n)
     }
 
-    _vTemplateText(n) {
-        this.out.print(n.text)
+    _vTemplateText (n) {
+        this.out.print (n.text)
         // console.log ("_vTemplateText")
         // console.log (n.text)
     }
 
-    _vELExpression(n) {
+    _vELExpression (n) {
         // console.log ("_vELExpression")
         // console.log (n.text);
-        this.out.print(n.text)
+        this.out.print (n.text)
     }
 }
 
