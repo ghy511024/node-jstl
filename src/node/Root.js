@@ -1,4 +1,4 @@
-const Node = require("./Node");
+const Node = require ("./Node");
 
 class Root extends Node {
     constructor() {

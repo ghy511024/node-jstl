@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/jstl.iml" filepath="$PROJECT_DIR$/.idea/jstl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/node-jstl.iml" filepath="$PROJECT_DIR$/.idea/node-jstl.iml" />
     </modules>
   </component>
 </project>

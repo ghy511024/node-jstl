@@ -1,16 +1,16 @@
-const Node = require("./Node");
+const Node = require ("./Node");
 
 class Nodes {
 
-    constructor(root) {
+    constructor (root) {
         this.root = root;
         this.list = [];
         this.list.push(root);
         this.name = "nodes"
     }
 
-    add(n) {
-        this.list.push(n);
+    add (n) {
+        this.list.push (n);
         this.root = null;
     }
 
@@ -19,12 +19,13 @@ class Nodes {
      * @abstract
      * @param v {Visitor}
      */
-    visit(v) {
+    visit (v) {
         let iter = this.list;
-        let item = iter.pop();
-        while (item != null) {
-            item.accept(v);
-            item = iter.pop();
+        for (let i = 0; i < iter.length; i++) {
+            let item = iter[i]
+            if (item != null) {
+                item.accept (v);
+            }
         }
     }
 

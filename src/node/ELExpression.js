@@ -4,6 +4,7 @@ class ELExpression extends Node {
     constructor(text, start, parent) {
         super(null, null, null, start, parent);
         this.text = text;
+        this.name = "ELExpression"
     }
 }
 
