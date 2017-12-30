@@ -1,5 +1,8 @@
 const Compiler = require("../Compiler")
 const GenerateVisitor = require("./GenerateVisitor");
+const FileWriter = require("../../src/writer/FileWriter");
+const StringWriter = require("../../src/writer/StringWriter");
+const ServletWriter = require("../../src/writer/ServletWriter");
 
 /**
  * @param outpath {String} 输出绝对路径
@@ -8,13 +11,45 @@ const GenerateVisitor = require("./GenerateVisitor");
  * @return
  */
 class Generator {
-    constructor() {
-
+    constructor(out) {
+        this.out = out;
     }
 
     static generate(outpath, compiler, page) {
-        let gen = new Generator(outpath, compiler);
-        page.visit(new GenerateVisitor());
+        let fileWriter = new FileWriter(outpath);
+        let out = new ServletWriter(fileWriter);
+        let gen = new Generator(out, compiler);
+        gen.generatePreamble(page)
+        page.visit(new GenerateVisitor(out));
+    }
+
+    /**
+     * 生成头部信息
+     * @param page {Node.Nodes}
+     * */
+    generatePreamble(page) {
+        let out = this.out;
+        out.print("class");
+        out.printil(" demojs {");
+        out.printil("constructor() {");
+        out.print("}");
+        out.pushIndent();
+        this.genPreambleMethods();
+        out.printil("outjs(data){");
+        out.printil("let _jspx_page_context = new PageContext(data);")
+        out.printil("try {")
+
+    }
+
+    /**
+     * 生成方法
+     * */
+    genPreambleMethods() {
+
+    }
+
+    genPreamblePackage(packageName) {
+
     }
 }
 

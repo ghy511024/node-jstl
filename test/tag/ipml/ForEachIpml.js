@@ -3,8 +3,8 @@ const EVAL_BODY_INCLUDE = 1;
 const SKIP_PAGE = 5;
 const EVAL_PAGE = 6;
 
-const TagSupport = require("./TagSupport");
-const ForEachSupport = require("./ForEachSupport");
+const TagSupport = require("../TagSupport");
+const ForEachSupport = require("../ForEachSupport");
 
 class ForEachIpml extends ForEachSupport {
     constructor() {

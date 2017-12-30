@@ -6,6 +6,7 @@ class Nodes {
         this.root = root;
         this.list = [];
         this.list.push(root);
+        this.name = "nodes"
     }
 
     add(n) {

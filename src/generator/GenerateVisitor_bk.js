@@ -1,10 +1,14 @@
+/**
+ * 这个方案是针对，在内存中计算出模板字符串，而不是生成js 文件，考虑到，
+ * 动态成成js 不太好调用，而且产生垃圾文件，对于git 提交不太友好
+ *
+ * */
+
 const Node = require("../node/Node-Api");
-const visit_TemplateText = require("./visitimpl/visit_TemplateText");
 
 class GenerateVisitor extends Node.Visitor {
-    constructor(out) {
+    constructor() {
         super();
-        this.out = out;
         this.tagVarNumbers = {};
     }
 

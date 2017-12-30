@@ -1,8 +1,10 @@
 /**
  * Created by ghy on 2017/11/17.
  */
+const path=require("path")
 const JspReader = require("./JspReader");
 const Parser = require("./Parser");
+// const Generator = require("./generator/Generator-Api");
 const Generator = require("./generator/Generator-Api");
 
 class Compiler {
@@ -19,7 +21,9 @@ class Compiler {
         let reader = new JspReader(this.baseDir, filename);
         let pageNodes = Parser.parse(filename, reader, parent)
         console.log("=======================构造pagenode 结束==================")
-        Generator.generate("", this, pageNodes);
+        // console.log(pageNodes.name);
+        // console.log(pageNodes.list.length);
+        Generator.generate(path.join(__dirname, "../out/outdemo.js"), this, pageNodes);
     }
 }
 

@@ -5,6 +5,7 @@ class CustomTag extends Node {
         super(qName, localName, attrs, start, parent);
         this.prefix = prefix;
         this.uri = uri;
+        this.name = "customtag"
     }
 }
 
