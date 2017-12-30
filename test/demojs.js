@@ -31,7 +31,7 @@ class demojs {
             if (_js_eval_c_forEach_0 != 0) {
                 do {
                     this.ret += "nnn";
-                    int evalDoAfterBody = js_th_c_forEach.doAfterBody();
+                    let evalDoAfterBody = js_th_c_forEach.doAfterBody();
                 }
                 while (true)
             }
