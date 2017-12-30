@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="a143e032-4bab-4371-90ac-6225019be936" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/tagImpl/ForEach.js" afterPath="$PROJECT_DIR$/src/tagImpl/ForEach.js" />
+=======
     <list default="true" id="be8d44d3-8c8c-4d0a-88f6-ce63a903232f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Compiler.js" afterPath="$PROJECT_DIR$/src/Compiler.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parser.js" afterPath="$PROJECT_DIR$/src/Parser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generator/GenerateVisitor.js" afterPath="$PROJECT_DIR$/src/generator/GenerateVisitor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/generator/Generator.js" afterPath="$PROJECT_DIR$/src/generator/Generator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/CustomTag.js" afterPath="$PROJECT_DIR$/src/node/CustomTag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/ELExpression.js" afterPath="$PROJECT_DIR$/src/node/ELExpression.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/Nodes.js" afterPath="$PROJECT_DIR$/src/node/Nodes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/Root.js" afterPath="$PROJECT_DIR$/src/node/Root.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/node/TemplateText.js" afterPath="$PROJECT_DIR$/src/node/TemplateText.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/taglib/Attributes.js" afterPath="$PROJECT_DIR$/src/taglib/Attributes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/FileWriter.js" afterPath="$PROJECT_DIR$/src/writer/FileWriter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/ServletWriter.js" afterPath="$PROJECT_DIR$/src/writer/ServletWriter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/StringWriter.js" afterPath="$PROJECT_DIR$/src/writer/StringWriter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/writer/Writer.js" afterPath="$PROJECT_DIR$/src/writer/Writer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/demojs.js" afterPath="$PROJECT_DIR$/test/demojs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/t1.js" afterPath="$PROJECT_DIR$/test/t1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/jsp/x1.jsp" afterPath="$PROJECT_DIR$/views/jsp/x1.jsp" />
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,6 +86,21 @@
               </provider>
             </entry>
           </file>
+<<<<<<< HEAD
+          <file leaf-file-name="Attributes.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/taglib/Attributes.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+=======
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
         </leaf>
       </split-first>
       <split-second>
@@ -98,8 +140,17 @@
           <file leaf-file-name="ForEachIpml.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/tag/ForEachIpml.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state relative-caret-position="96">
+=======
+<<<<<<< HEAD
+                <state relative-caret-position="256">
+                  <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+=======
+                <state relative-caret-position="-161">
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
                   <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
                   <folding />
                 </state>
               </provider>
@@ -143,9 +194,22 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="1" />
     <option name="width" value="1378" />
+=======
+<<<<<<< HEAD
+    <option name="x" value="289" />
+    <option name="y" value="100" />
+    <option name="width" value="1595" />
+    <option name="height" value="866" />
+=======
+    <option name="x" value="-2" />
+    <option name="y" value="14" />
+    <option name="width" value="1386" />
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
     <option name="height" value="726" />
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -311,15 +375,54 @@
       <created>1512637671023</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1512628640340</updated>
+      <workItem from="1512628641549" duration="9344000" />
+=======
       <updated>1512637671023</updated>
+<<<<<<< HEAD
       <workItem from="1512637673394" duration="6102000" />
       <workItem from="1513059214223" duration="635000" />
       <workItem from="1513063444052" duration="194000" />
+=======
+      <workItem from="1512637673394" duration="3922000" />
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="6931000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="9344000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="289" y="100" width="1595" height="866" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3628922" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287858" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16570328" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+=======
+    <option name="totallyTimeSpent" value="3922000" />
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="0" width="1378" height="726" extended-state="0" />
@@ -334,6 +437,11 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -523,6 +631,26 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/tagImpl/ForEach.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/taglib/Attributes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/src/taglib/Context.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -533,6 +661,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/generator/GenerateVisitor_t2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -541,5 +670,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> f9c7e49bc7824bdd7ef47b6b98a0d91cc071bc7c
+>>>>>>> a75dc55088468570deda8ff475a95b27574bb3e5
   </component>
 </project>
