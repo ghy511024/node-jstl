@@ -4,7 +4,7 @@
  *
  */
 const Abstract = require("../object/Abstract");
-const lineSeparator = "\r\n";
+const lineSeparator = "\n";
 class Writer extends Abstract {
     constructor() {
         super();

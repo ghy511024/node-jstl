@@ -5,7 +5,7 @@ class Nodes {
     constructor (root) {
         this.root = root;
         this.list = [];
-        this.list.push (root);
+        this.list.push(root);
         this.name = "nodes"
     }
 

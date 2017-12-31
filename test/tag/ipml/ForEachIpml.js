@@ -3,8 +3,8 @@ const EVAL_BODY_INCLUDE = 1;
 const SKIP_PAGE = 5;
 const EVAL_PAGE = 6;
 
-const TagSupport = require("./TagSupport");
-const ForEachSupport = require("./ForEachSupport");
+const TagSupport = require("../TagSupport");
+const ForEachSupport = require("../ForEachSupport");
 
 class ForEachIpml extends ForEachSupport {
     constructor() {
@@ -12,9 +12,6 @@ class ForEachIpml extends ForEachSupport {
         this.end;
         this.begin;
     }
-
-
-
     doStartTag() {
         if (this.end != -1 && this.begin > this.end) {
             return
@@ -36,7 +33,7 @@ class ForEachIpml extends ForEachSupport {
     }
 
     doAfterBody() {
-        this.index += step - 1;
+        this.index += this.step - 1;
         this.count++;
         if (this.hasNext() && this.atEnd()) {
             this.index++;

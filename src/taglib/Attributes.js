@@ -26,7 +26,7 @@ class Attributes {
         let max = this.dlength * this.len;
         for (let i = 0; i < max; i += this.len) {
             if (this.data[i + 2] == name) {
-                return data[i + 4];
+                return this.data[i + 4];
             }
         }
         return null;

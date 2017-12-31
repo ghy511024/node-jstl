@@ -9,6 +9,7 @@ class FileWriter extends Writer {
     constructor (outFilePath) {
         super ();
         this.filePath = outFilePath;
+        console.log(this.filePath,"bbbbbbbbbbbyyyyyyyyyyy");
         fs.writeFileSync (this.filePath, "");
     }
 

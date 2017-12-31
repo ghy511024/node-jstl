@@ -10,8 +10,7 @@ const SESSION = "node.jstl.jsSession";
 
 class PageContext {
     constructor(data) {
-        this.data;
-        // page-scope 最高级别
+        this.data=data;
         this.attributes = {};
         this.isNametableInitialized = false;
     }
@@ -43,27 +42,27 @@ class PageContext {
         this.setAttribute(SESSION, {})
     }
 
+    /**
+     * 本该词法解析，先做 简单点，支持 a.b.c 这种单个表达式解析，不支持运算表达式
+     * */
     getElValue(exp) {
         var exp_str;
         var reg = /\$\{(.*?)\}/gi
         exp.replace(reg, function (_, $1) {
             exp_str = $1;
         })
-        let tmpData = this.data || {};
+        // let tmpData = this.data || {};
+        let tmpData=Object.assign({},this.attributes,this.data)
         let ret_value = null;
-        console.log("elvalue:", exp_str);
         var exp_array = exp_str.split(".");
-        console.log(exp_str)
         for (let i = 0; i < exp_array.length; i++) {
             var c_key = exp_array[i];
             ret_value = tmpData[c_key];
-
             if (ret_value == null) {
                 break;
             }
             tmpData = ret_value;
         }
-        console.log(ret_value);
         return ret_value;
     }
 }
