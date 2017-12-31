@@ -20,9 +20,9 @@ class PageContext {
             if (!this.isNametableInitialized) {
                 this.initializePageScopeNameTable();
             }
-            attributes[name] = attribute;
+            this.attributes[name] = attribute;
         } else {
-            attributes[name] = null;
+            this.attributes[name] = null;
         }
 
     }
@@ -53,6 +53,7 @@ class PageContext {
         })
         // let tmpData = this.data || {};
         let tmpData=Object.assign({},this.attributes,this.data)
+
         let ret_value = null;
         var exp_array = exp_str.split(".");
         for (let i = 0; i < exp_array.length; i++) {
@@ -63,6 +64,7 @@ class PageContext {
             }
             tmpData = ret_value;
         }
+        console.log("this.attributes",this.attributes,exp_array,ret_value)
         return ret_value;
     }
 }

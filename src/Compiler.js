@@ -13,19 +13,17 @@ class Compiler {
         this.baseDir = baseDir
     }
 
-    compile (filename) {
+    compile (filename,outPath) {
         let t1, t2, t3, t4;
-        this.doParser (filename, null);
+        this.doParser (filename, null,outPath);
     }
 
-    doParser (filename, parent) {
+    doParser (filename, parent,outPath) {
         let reader = new JspReader (this.baseDir, filename);
         let pageNodes = Parser.parse (filename, reader, parent)
         console.log ("=======================构造pagenode 结束==================")
         // this.testNode (pageNodes);
         console.log ("=======================构造gennerator 访问 结束==================")
-
-        let outPath = path.join (__dirname, "./out/xixi.jsp");
         Generator.generate (outPath, this, pageNodes);
     }
 

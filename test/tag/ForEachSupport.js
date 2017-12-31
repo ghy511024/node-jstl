@@ -1,13 +1,13 @@
-const TagSupport = require("./TagSupport");
+const TagSupport = require ("./TagSupport");
 
 
 class ForEachSupport extends TagSupport {
-    constructor() {
-        super();
+    constructor () {
+        super ();
         this.items = null;
     }
 
-    supportedTypeForEachIterator(o) {
+    supportedTypeForEachIterator (o) {
         if (o instanceof String) {
 
         } else {
@@ -15,15 +15,15 @@ class ForEachSupport extends TagSupport {
         }
     }
 
-    hasNext() {
+    hasNext () {
         return this.items != null && this.items.length > 0;
     }
 
-    next() {
-        return this.items.pop();
+    next () {
+        return this.items.pop ();
     }
 
-    setItems(o) {
+    setItems (o) {
         if (o == null) {
             this.rawItems = [];
         } else {
@@ -31,20 +31,20 @@ class ForEachSupport extends TagSupport {
         }
     }
 
-    setVar(_id) {
+    setVar (_id) {
         this.itemId = _id;
     }
 
-    prepare() {
+    prepare () {
         if (this.rawItems != null) {
-            this.items = this.supportedTypeForEachIterator(this.rawItems);
+            this.items = this.supportedTypeForEachIterator (this.rawItems);
         } else {
             let ia = [];
             for (let i = 0; i < this.end; i++) {
                 ia[i] = i;
             }
             //todo 逻辑没写完，20171123：01：58 返回一个基础的迭代器实现类
-            this.items = new SimpleForEachIterator(ia);
+            this.items = new SimpleForEachIterator (ia);
 
         }
 
@@ -53,30 +53,30 @@ class ForEachSupport extends TagSupport {
     /**
      * @param firstTime{Boolean}
      * */
-    exposeVariables(firstTime) {
+    exposeVariables (firstTime) {
         if (this.itemId != null) {
-            if (this.getCurrent() == null) {
-                this.pageContext.removeAttribute(this.itemId)
+            if (this.getCurrent () == null) {
+                this.pageContext.removeAttribute (this.itemId)
             } else if (this.deferredExpression != null) {
 
             } else {
-                this.pageContext.setAttribute(this.itemId, this.getCurrent())
+                this.pageContext.setAttribute (this.itemId, this.getCurrent ())
             }
         }
     }
 }
 
 class SimpleForEachIterator {
-    constructor(i) {
+    constructor (i) {
         this.i = i;//Iterator 迭代器
     }
 
-    hasNext() {
+    hasNext () {
         return this.i != null && this.i.length > 0;
     }
 
-    next() {
-        return this.i.pop();
+    next () {
+        return this.i.pop ();
     }
 }
 
