@@ -1,6 +1,8 @@
 {
   "name": "jstl",
   "version": "0.0.1",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "esprima": "^4.0.0"
   }
 }

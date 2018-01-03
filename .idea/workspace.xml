@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35b78106-9621-4bff-8bba-798fc6c0b6ca" name="Default" comment="">
+    <list default="true" id="5fe56481-3437-49fe-96e2-d1b699d42640" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -143,9 +144,14 @@
         <option value="$PROJECT_DIR$/src/taglib/Attributes.js" />
         <option value="$PROJECT_DIR$/src/generator/Generator.js" />
         <option value="$PROJECT_DIR$/src/generator/GenerateVisitor.js" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+=======
         <option value="$PROJECT_DIR$/test/tag/ForEachSupport.js" />
         <option value="$PROJECT_DIR$/test/tag/PageContext.js" />
         <option value="$PROJECT_DIR$/test/tag/ipml/ForEachIpml.js" />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
       </list>
     </option>
   </component>
@@ -291,14 +297,31 @@
       <created>1514639046339</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1514629874013</updated>
+      <workItem from="1514629875419" duration="5321000" />
+=======
       <updated>1514639046339</updated>
+<<<<<<< HEAD
       <workItem from="1514639047809" duration="11939000" />
       <workItem from="1514779805033" duration="426000" />
+=======
+      <workItem from="1514639047809" duration="11450000" />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="12365000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="5321000" />
+=======
+    <option name="totallyTimeSpent" value="11450000" />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
   </component>
   <component name="ToolWindowManager">
     <frame x="426" y="118" width="1471" height="808" extended-state="0" />
@@ -334,6 +357,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/Compiler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -406,6 +430,18 @@
         </state>
       </provider>
     </entry>
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/wiki/daily.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="96">
+            <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="20" />
+            <folding />
+          </first_editor>
+          <second_editor />
+=======
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
     <entry file="file://$PROJECT_DIR$/src/taglib/Context.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -417,6 +453,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
         </state>
       </provider>
     </entry>
@@ -510,30 +551,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/node/Node.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="272">
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="576">
+          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
+=======
+        <state relative-caret-position="107">
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
           <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Compiler.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="448">
           <caret line="28" column="23" lean-forward="false" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="-2416">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+=======
+        <state relative-caret-position="178">
+          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/taglib/Attributes.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="141">
+          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+=======
         <state relative-caret-position="389">
           <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
+>>>>>>> a26b4f6df945cea3acde0a5c2a6eb55e2b02f749
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/tag/getElValue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
+<<<<<<< HEAD
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+=======
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="29" />
         </state>
       </provider>
@@ -542,10 +617,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="848">
           <caret line="53" column="34" lean-forward="true" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="16">
+            <caret line="1" column="39" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="39" />
+            <folding />
+          </first_editor>
+          <second_editor />
+=======
     <entry file="file://$PROJECT_DIR$/test/tag/TagSupport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -589,6 +675,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+          <folding />
+>>>>>>> 0df98eda7e84cf45eaf7d5a18d353a2f64e14381
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="7" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding />
         </state>
       </provider>

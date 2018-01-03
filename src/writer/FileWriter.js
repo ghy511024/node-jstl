@@ -9,12 +9,27 @@ class FileWriter extends Writer {
     constructor (outFilePath) {
         super ();
         this.filePath = outFilePath;
-        console.log(this.filePath,"bbbbbbbbbbbyyyyyyyyyyy");
         fs.writeFileSync (this.filePath, "");
     }
 
     _write_str (s) {
         fs.appendFileSync (this.filePath, s);
+    }
+
+    _write_num (s) {
+        fs.appendFileSync (this.filePath, s);
+    }
+
+    _write_bol (s) {
+        fs.appendFileSync (this.filePath, s);
+    }
+
+    _write_obj (s) {
+        fs.appendFileSync (this.filePath, "[Object]");
+    }
+
+    _write_arr (s) {
+        fs.appendFileSync (this.filePath, "[Array]");
     }
 
 }
