@@ -136,7 +136,7 @@ class ForEachIpml extends TagSupport {
 
     beginEndForEachIterator () {
         let ia = [];
-        for (let i = 0; i <= end; i++) {
+        for (let i = 0; i <= this.end; i++) {
             ia[i] = i;
         }
         return ia;

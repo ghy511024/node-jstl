@@ -11,6 +11,8 @@ class TagInfo {
 }
 
 TagInfo.BODY_CONTENT_JSP = "JSP";
+TagInfo.BODY_CONTENT_PARAM = "BODY_CONTENT_PARAM";
+
 TagInfo.prototype = {
     tagName: null,
     tagClassName: null,

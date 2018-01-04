@@ -207,7 +207,6 @@ class JspReader {
             }
 
         }
-        console.log("tocken:", ret)
         return ret;
     }
 

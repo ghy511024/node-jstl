@@ -1,27 +1,26 @@
-var esprima = require('esprima');
+var esprima = require ('esprima');
 
-class excute {
-    constructor(ctx) {
+class AstCompiler {
+    constructor (ctx) {
         this.ctx = ctx;
-
     }
 
-    excute(program) {
+    excute (program) {
         // let program = 'a>b&&c==0';
-
-        let ast = esprima.parse(program);
-        console.log(JSON.stringify(ast))
+        let ast = esprima.parse (program);
+        // console.log (JSON.stringify (ast))
         let astBody = ast.body || [];
+        let value;
         if (astBody.length > 0) {
             let expression = astBody[0].expression;
-            // console.log(expression, this.ctx)
-            var val = this.getvalue(expression, this.ctx);
-            console.log(val)
+            // console.log ("express:", expression)
+            value = this.getvalue (expression, this.ctx);
+            // console.log (val)
         }
-
+        return value;
     }
 
-    getvalue(node, ctx) {
+    getvalue (node, ctx) {
         ctx = ctx || this.ctx;
         let type = node.type;
         let value;
@@ -29,9 +28,10 @@ class excute {
             case "ThisExpression":
                 break;
             case "Identifier":
-                value = this.getIdentifier(node, ctx);
+                value = this.getIdentifier (node, ctx);
                 break;
             case "Literal":
+                value = this.getLiteral (node);
                 break;
             case "ArrayExpression":
                 break;
@@ -46,7 +46,7 @@ class excute {
             case "TaggedTemplateExpression":
                 break;
             case "MemberExpression":
-                value = this.getMemberExpression(node, ctx);
+                value = this.getMemberExpression (node, ctx);
                 break;
             case "Super":
                 break;
@@ -63,9 +63,10 @@ class excute {
             case "UnaryExpression":
                 break;
             case "BinaryExpression":
+                value = this.getBinaryExpression (node, ctx);
                 break;
             case "LogicalExpression":
-                value = this.getLogicalExpression(node, ctx);
+                value = this.getLogicalExpression (node, ctx);
                 break;
             case "ConditionalExpression":
                 break;
@@ -76,7 +77,6 @@ class excute {
             case "BinaryExpression":
                 break;
             case "SequenceExpression":
-
                 break;
             default:
                 break;
@@ -84,26 +84,31 @@ class excute {
         return value;
     }
 
-    getIdentifier(node, ctx) {
+    getIdentifier (node, ctx) {
         let idname = node.name;
         // console.log("Identifier", idname, ctx)
         return ctx[idname]
     }
 
-    getMemberExpression(node, ctx) {
+    getLiteral (node) {
+        let value = node.value;
+        return value;
+    }
+
+    getMemberExpression (node, ctx) {
         let object = node.object;
         let property = node.property;
         let computed = node.computed;// 暂时没用到
-        let object_val = this.getvalue(object, ctx);
-        let property_val = this.getvalue(property, object_val);
+        let object_val = this.getvalue (object, ctx);
+        let property_val = this.getvalue (property, object_val);
         return property_val;
     }
 
-    getBinaryExpression(node, ctx) {
+    getBinaryExpression (node, ctx) {
         let left = node.left;
         let right = node.right;
-        let left_val = this.getvalue(left, ctx);
-        let right_val = this.getvalue(right, ctx);
+        let left_val = this.getvalue (left, ctx);
+        let right_val = this.getvalue (right, ctx);
         let operator = node.operator;
 
         let value;
@@ -113,60 +118,82 @@ class excute {
                 break;
             case "in":
                 value = left_val in right_val;
+                break;
             case "+":
                 value = left_val + right_val;
+                break;
             case "-":
                 value = left_val - right_val;
+                break;
             case "*":
                 value = left_val * right_val;
+                break;
             case "/":
                 value = left_val / right_val;
+                break;
             case "%":
                 value = left_val % right_val;
+                break;
             case "**":
                 value = left_val ** right_val;
+                break;
             case "|":
                 value = left_val | right_val;
+                break;
             case "^":
                 value = left_val ^ right_val;
+                break;
             case "&":
                 value = left_val & right_val;
+                break;
             case "<<":
                 value = left_val << right_val;
+                break;
             case "==":
                 value = left_val == right_val;
+                break;
             case "!=":
                 value = left_val != right_val;
+                break;
             case "===":
                 value = left_val === right_val;
+                break;
             case "!==":
                 value = left_val !== right_val;
+                break;
             case "<":
                 value = left_val < right_val;
+                break;
             case "<=":
                 value = left_val <= right_val;
+                break;
             case ">":
                 value = left_val > right_val;
+                break;
             case ">=":
                 value = left_val >= right_val;
+                break;
             case "<<":
                 value = left_val << right_val;
+                break;
             case ">>":
                 value = left_val >> right_val;
+                break;
             case ">>>":
                 value = left_val >>> right_val;
                 break;
             default:
                 break;
         }
+        console.log (left_val, right_val, operator, value)
         return value;
     }
 
-    getLogicalExpression(node) {
+    getLogicalExpression (node) {
         let left = node.left;
         let right = node.right;
-        let left_val = this.getvalue(left);
-        let right_val = this.getvalue(right);
+        let left_val = this.getvalue (left);
+        let right_val = this.getvalue (right);
         let operator = node.operator;
         let value;
         switch (operator) {
@@ -183,4 +210,4 @@ class excute {
     }
 }
 
-module.exports = excute;
+module.exports = AstCompiler;

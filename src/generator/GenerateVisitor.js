@@ -3,12 +3,13 @@
  * */
 
 const Node = require ("../node/Node-Api");
-const Tag = require ("../../test/tag/Tag");
+const Tag = require ("../tag/Tag");
 const visit_TemplateText = require ("./visitimpl/visit_TemplateText");
-const PageContext = require ("../../test/tag/PageContext");
+const PageContext = require ("../ctx/PageContext");
 
 // tag 解析实现类
-const ForEachIpml = require ("../../test/tag/ipml/ForEachIpml");
+const ForEachIpml = require ("../tag/ipml/ForEachIpml");
+const IfIpml = require ("../tag/ipml/IfIpml");
 
 class GenerateVisitor extends Node.Visitor {
     constructor (out, pageContext) {
@@ -25,7 +26,7 @@ class GenerateVisitor extends Node.Visitor {
      * 覆盖父类visit 抽象方-----+-+法
      */
     visit (n) {
-        console.log ("统一调用我....")
+        console.log(n.name)
         if (n instanceof Node.CustomTag) {
             this._vCustomTag (n);
         } else if (n instanceof Node.Nodes) {
@@ -45,27 +46,30 @@ class GenerateVisitor extends Node.Visitor {
      */
     _vCustomTag (n) {
         console.log ("_vCustomTag")
-        // console.log (n.qName)
-        // console.log (n.prefix)
-        // console.log (n.localName)
-        // console.log (n.uri)
-        // console.log(n.attrs)
+        console.log (n.qName, n.prefix, n.localName, n.uri)
         if (n.localName == "forEach") {
             let eachtag = new ForEachIpml ();
             eachtag.setPageContext (this.pageContext);
             eachtag.setVar (n.attrs.getValue ("var"));// "item"
             eachtag.setItems (n.attrs.getValue ("items"));// "${list1}"
-            // console.log(n.attrs.getValue ("var"),n.attrs.getValue ("items"))
             let each_val = eachtag.doStartTag ();
             if (each_val != Tag.SKIP_BODY) {
                 while (true) {
                     this.visitBody (n)
                     let evalDoAfterBody = eachtag.doAfterBody ();
-                    console.log ("循环中....................", evalDoAfterBody)
                     if (evalDoAfterBody != Tag.EVAL_BODY_AGAIN) {
                         break;
                     }
                 }
+            }
+        } else if (n.localName == "if") {
+            let iftag = new IfIpml ();
+            iftag.setPageContext (this.pageContext);
+            iftag.setTest (n.attrs.getValue ("test"))
+
+            let if_val = iftag.doStartTag ();
+            if (if_val != Tag.SKIP_BODY) {
+                this.visitBody (n);
             }
         }
         // this.visitBody(n)
@@ -81,14 +85,11 @@ class GenerateVisitor extends Node.Visitor {
     }
 
     _vTemplateText (n) {
-        console.log ("_vTemplateText", n.text)
+        // console.log ("_vTemplateText", n.text)
         this.out.print (n.text)
-        // console.log ("_vTemplateText")
-        // console.log (n.text)
     }
 
     _vELExpression (n) {
-        console.log ("el 表达式 输出", n.text, this.pageContext.getElValue (n.text))
         this.out.print (this.pageContext.getElValue (n.text))
     }
 }

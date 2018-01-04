@@ -1,7 +1,7 @@
-const PageContext = require("./tag/PageContext");
-const ForEachIpml = require("./tag/ipml/ForEachIpml");
-const TagIpml = require("./tag/ipml/TagIpml");
-const Tag = require("./tag/Tag");
+const PageContext = require("../src/ctx/PageContext");
+const ForEachIpml = require("../src/tag/ipml/ForEachIpml");
+const TagIpml = require("../src/tag/ipml/TagIpml");
+const Tag = require("../src/tag/Tag");
 
 class demojs {
     constructor() {

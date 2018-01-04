@@ -1,36 +1,37 @@
 /**
  * Created by ghy on 2017/11/17.
  */
-const Nodes = require("./Nodes");
+const Nodes = require ("./Nodes");
 
 class Node {
-    constructor(qName, localName, attrs, start, parent) {
+    constructor (qName, localName, attrs, start, parent) {
         this.qName = qName;
         this.localName = localName;
         this.attrs = attrs;
         // this.taglibAttrs = taglibAttrs;
         this.startMark = start;
         this.isDummy = (start == null);
-        this.addToParent(parent);
+        this.addToParent (parent);
+        this.name = "node";
     }
 
-    addToParent(parent) {
+    addToParent (parent) {
         if (parent != null) {
             this.parent == parent;
             let parentBody = parent.body;
             if (parentBody == null) {
-                parentBody = new Nodes();
+                parentBody = new Nodes ();
                 parent.body = parentBody;
             }
-            parentBody.add(this);
+            parentBody.add (this);
         }
     }
 
-    static getCustomTag() {
+    static getCustomTag () {
 
     }
 
-    getBody() {
+    getBody () {
         return this.body;
     }
 
@@ -38,8 +39,8 @@ class Node {
      * @abstract 抽象方法
      * @param v {Visitor}
      */
-    accept(v) {
-        v.visit(this);
+    accept (v) {
+        v.visit (this);
 
     }
 

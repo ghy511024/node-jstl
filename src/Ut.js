@@ -27,7 +27,7 @@ var Ut = {
         return /[A-Za-z]/.test(ch);
     },
     isDigit(ch) {
-        //todo 校验是否为数组,需要优化
+        //todo 校验是否为数字,需要优化
         return /0-9/.test(ch);
     }
 }

@@ -10,6 +10,7 @@ const Mark = require ("./Mark");
 const Attributes = require ("./taglib/Attributes")
 const TagInfo = require ("./taglib/TagInfo");
 
+const JSP_BODY_CONTENT_PARAM = "JSP_BODY_CONTENT_PARAM"
 class Parser {
     constructor (reader) {
         this.reader = reader;
@@ -40,13 +41,13 @@ class Parser {
     }
 
     parseElements (parent) {
-        this.reader.showP ("Parser.parseElements")
+        // this.reader.showP ("Parser.parseElements")
         this.start = this.reader.mark ();
         if (this.reader.matches ("${")) {
             this.parseELExpression (parent, "${")
         }
         else if (this.reader.matches ("<jsp:")) {
-            //todo 解析include 标签
+
         }
         else if (!this.parseCustomTag (parent)) {
             this.parseTemplateText (parent);
@@ -98,6 +99,27 @@ class Parser {
         }
         console.log ("parseTemplateText:", ttext);
         new Node.TemplateText (ttext, this.start, parent);
+    }
+
+    /**
+     * 解析jsp: 标准语法
+     * */
+    parseStandardAction (parent) {
+        let start = this.reader.mark ();
+        if (this.reader.matches ("include")) {
+            this.parseInclude (parent)
+        }
+    }
+
+    /**
+     * 解析<jsp:include>
+     * */
+    parseInclude (parent) {
+        let attrs = this.parseAttributes ();
+        this.reader.skipSpaces ();
+        // Node 类型
+        let includeNode = new Node ("jsp:include", "include", attrs, this.start, parent);
+        this.parseOptionalBody (includeNode, "jsp:include", JSP_BODY_CONTENT_PARAM)
     }
 
     parseCustomTag (parent) {
@@ -200,6 +222,13 @@ class Parser {
         }
     }
 
+    /**
+     * Attempts to parse 'JspAttributeAndBody' production. Returns true if it
+     * matched, or false if not. Assumes EmptyBody is okay as well.
+     *
+     * JspAttributeAndBody ::= ( '>' # S? ( '<jsp:attribute' NamedAttributes )?
+     * '<jsp:body' ( JspBodyBody | <TRANSLATION_ERROR> ) S? ETag )
+     * */
     parseJspAttributeAndBody () {
         let result = false;
         //todo 这块可以去掉优化
@@ -209,14 +238,26 @@ class Parser {
 
     parseBody (parent, tag, bodyType) {
         this.reader.showP ("Parser.parseBody  " + tag + " " + bodyType + " " + (bodyType == TagInfo.BODY_CONTENT_JSP))
-        if (bodyType == TagInfo.BODY_CONTENT_JSP) {
-            while (this.reader.hasMoreInput ()) {
-                if (this.reader.matchesETag (tag)) {
-                    return;
-                }
+
+        while (this.reader.hasMoreInput ()) {
+            if (this.reader.matchesETag (tag)) {
+                return;
+            }
+            if (bodyType == TagInfo.BODY_CONTENT_JSP) {
                 this.parseElements (parent);
             }
+            else if (bodyType == TagInfo.BODY_CONTENT_PARAM) {
+                this.reader.skipSpaces ();
+                this.parseParam (parent);
+            }
         }
+    }
+
+    /**
+     * @param parent {Node}
+     * */
+    parseParam (parent) {
+
     }
 
     /**
@@ -258,7 +299,7 @@ class Parser {
         let watchString = quote;// java jsp 中 还有 <%=%> 这种情况（此时 watchString=%>"），js 版本中不考虑了
         console.log ("quoto", quote)
         let attrValue = this.parseAttributeValue (watchString);
-        console.log ("attrValue",  localName, qName, "CDATA", attrValue);
+        console.log ("attrValue", localName, qName, "CDATA", attrValue);
         attrs.addAttribute (localName, qName, "CDATA", attrValue)
         return true;
     }
