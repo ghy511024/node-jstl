@@ -124,6 +124,7 @@ class JspReader {
         }
         this.skipSpaces();
         if (this.nextChar() == '>') {
+            console.log("............")
             return true;
         }
         this.reset(mark);

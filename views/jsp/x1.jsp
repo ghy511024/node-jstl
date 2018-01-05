@@ -1,12 +1,22 @@
-<jsp:include page="child.jsp">ss</jsp:include>
-<c:if test="${5>3&&list1!=null}">
-    <p>看到我就说明5》3了</p>
+
+<%--
+node 后台传输数据
+ data = {
+     num1: "1",
+     list1: [
+           {a: [1, true, 3, false, 5]},
+           {a: [{"x": "dd"}, [1, 2, 3]]},
+       }
+--%>
+<jsp:include page="x2.jsp"></jsp:include>
+<c:if test="${5>3&&list1!=null||num1=='1'}">
+    <P>if 语句生效了</P>
 </c:if>
 <c:forEach items="${list1}" var="item">
     <li>
-        <p>文字开始</p>
+        <p>外层循环</p>
         <c:forEach items="${item.a}" var="li">
-            <span> 很多文字,${li}</span>
+            <span> 内层循环,${li}</span>
         </c:forEach>
     </li>
 </c:forEach>

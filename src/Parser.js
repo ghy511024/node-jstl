@@ -48,7 +48,7 @@ class Parser {
             this.parseELExpression(parent, "${")
         }
         else if (this.reader.matches("<jsp:")) {
-
+            this.parseStandardAction(parent);
         }
         else if (!this.parseCustomTag(parent)) {
             this.parseTemplateText(parent);
@@ -119,8 +119,8 @@ class Parser {
         let attrs = this.parseAttributes();
         this.reader.skipSpaces();
         // Node 类型
-        let includeNode = new Node("jsp:include", "include", attrs, this.start, parent);
-        this.parseOptionalBody(includeNode, "jsp:include", JSP_BODY_CONTENT_PARAM)
+        let includeNode = new Node.IncludeAction(attrs, this.start, parent);
+        this.parseOptionalBody(includeNode, "jsp:include", TagInfo.BODY_CONTENT_PARAM)
     }
 
     parseCustomTag(parent) {
@@ -210,13 +210,12 @@ class Parser {
             return;
         }
         if (!this.reader.matches(">")) {
-            console.err("未知得结束标签")
+            //todo 抛出异常，未知标签
         }
         if (this.reader.matchesETag(tagName)) {
             // EmptyBody
             return;
         }
-
         if (!this.parseJspAttributeAndBody(parent, tagName, bodyType)) {
             // Must be ( '>' # Body ETag )
             this.parseBody(parent, tagName, bodyType);
@@ -239,8 +238,8 @@ class Parser {
 
     parseBody(parent, tag, bodyType) {
         this.reader.showP("Parser.parseBody  " + tag + " " + bodyType + " " + (bodyType == TagInfo.BODY_CONTENT_JSP))
-
-        while (this.reader.hasMoreInput()) {
+        let c = 0;
+        while (this.reader.hasMoreInput() && (++c) <= 10) {
             if (this.reader.matchesETag(tag)) {
                 return;
             }
@@ -260,6 +259,7 @@ class Parser {
     parseParam(parent) {
         if (!this.reader.matches("<jsp:param")) {
             //todo 抛出异常，jsperr
+            throw new Error("param err");
         }
         let attrs = this.parseAttributes();
         this.reader.skipSpaces();

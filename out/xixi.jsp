@@ -1,46 +1,36 @@
-<html>
-<body>
-<ul>
-    
-        <li>
-            <p>文字开始</p>
-            
-                <span> 很多文字,1</span>
-            
-                <span> 很多文字,true</span>
-            
-                <span> 很多文字,3</span>
-            
-                <span> 很多文字,false</span>
-            
-                <span> 很多文字,5</span>
-            
-        </li>
-    
-        <li>
-            <p>文字开始</p>
-            
-                <span> 很多文字,[Object]</span>
-            
-                <span> 很多文字,[Array]</span>
-            
-        </li>
-    
-        <li>
-            <p>文字开始</p>
-            
-                <span> 很多文字,xx</span>
-            
-                <span> 很多文字,bb</span>
-            
-                <span> 很多文字,ccc</span>
-            
-        </li>
-    
-    
-        <p>看到我就说明5》3了</p>
-    
-</ul>
-</body>
-</html>
+
+<%--
+node 后台传输数据
+ data = {
+     num1: "1",
+     list1: [
+           {a: [1, true, 3, false, 5]},
+           {a: [{"x": "dd"}, [1, 2, 3]]},
+       }
+--%>
+哈哈，我是x2.jsp 的内容
+
+
+    <P>if 语句生效了</P>
+
+
+    <li>
+        <p>外层循环</p>
+        
+            <span> 内层循环,1</span>
+        
+            <span> 内层循环,true</span>
+        
+    </li>
+
+    <li>
+        <p>外层循环</p>
+        
+            <span> 内层循环,[Object]</span>
+        
+            <span> 内层循环,[Array]</span>
+        
+    </li>
+
+
 
