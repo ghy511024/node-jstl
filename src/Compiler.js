@@ -14,7 +14,6 @@ class Compiler {
     }
 
     compile(filename, outPath) {
-        let t1, t2, t3, t4;
         try {
             this.doParser(filename, null, outPath);
         }
@@ -33,7 +32,7 @@ class Compiler {
         let reader = this.getReader(filename);
         let pageNodes = Parser.parse(filename, reader, parent)
         console.log("=======================构造pagenode 结束==================")
-        Generator.generate(outPath, this, pageNodes);
+        Generator.generateFile(outPath, this, pageNodes);
         // Generator.generateTree(outPath, this, pageNodes);
     }
 }

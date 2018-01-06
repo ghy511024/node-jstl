@@ -10,7 +10,23 @@ class StringWriter extends Writer {
     }
 
     _write_str (s) {
-        this.str += str;
+        this.str += s;
+    }
+
+    _write_num (s) {
+        this.str += s;
+    }
+
+    _write_bol (s) {
+        this.str += s;
+    }
+
+    _write_obj (s) {
+        this.str += "[Object]";
+    }
+
+    _write_arr (s) {
+        this.str += "[Array]";
     }
 
     toString () {

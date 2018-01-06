@@ -1,6 +1,5 @@
 const TagSupport = require ("../TagSupport");
 const Tag = require ("../Tag");
-const ForEachSupport = require ("../ForEachSupport");
 
 class IfIpml extends TagSupport {
     constructor () {
@@ -14,10 +13,8 @@ class IfIpml extends TagSupport {
 
         if (typeof el == "boolean") {
             this.test = el;
-            console.log ("aaaaaaaaaaaaaaaaaaaaaaaaaa", el)
         } else if (typeof el == "string") {
             this.test = this.pageContext.getElValue (el);
-            console.log ("bbbbbbbbbbbbbbbbbbbbbb", el, this.test)
         }
     }
 

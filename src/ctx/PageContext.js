@@ -47,8 +47,6 @@ class PageContext {
      * 使用词法解析
      * */
     getElValue (exp) {
-
-
         let tmpData = Object.assign ({}, this.attributes, this.data)
         let exp_str;
         let reg = /\$\{(.*?)\}/gi
@@ -57,23 +55,6 @@ class PageContext {
         })
         console.log (exp_str, "上下文")
         return ELparser.getValue (exp_str, tmpData);
-
-
-        // // let tmpData = this.data || {};
-        //
-        //
-        // let ret_value = null;
-        // var exp_array = exp_str.split (".");
-        // for (let i = 0; i < exp_array.length; i++) {
-        //     var c_key = exp_array[i];
-        //     ret_value = tmpData[c_key];
-        //     if (ret_value == null) {
-        //         break;
-        //     }
-        //     tmpData = ret_value;
-        // }
-        // console.log ("this.attributes", this.attributes, exp_array, ret_value)
-        // return ret_value;
     }
 }
 

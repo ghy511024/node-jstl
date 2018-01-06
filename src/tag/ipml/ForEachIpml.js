@@ -1,6 +1,5 @@
 const TagSupport = require ("../TagSupport");
 const Tag = require ("../Tag");
-const ForEachSupport = require ("../ForEachSupport");
 
 class ForEachIpml extends TagSupport {
     constructor () {

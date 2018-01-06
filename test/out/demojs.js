@@ -1,6 +1,5 @@
 const PageContext = require("./tag/PageContext");
 const ForEachIpml = require("./tag/ipml/IfIpml");
-const TagIpml = require("./tag/ipml/TagIpml");
 const Tag = require("./tag/Tag");
 
 class demojs {

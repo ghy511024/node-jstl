@@ -169,7 +169,7 @@ class Parser {
 
     /**
      * ELExpressionBody
-     *  (following "${" or "#{"to first unquoted "}")
+     *  (举个栗子 "${" or "#{"to first unquoted "}")
      * @param
      * @return
      */
@@ -223,11 +223,7 @@ class Parser {
     }
 
     /**
-     * Attempts to parse 'JspAttributeAndBody' production. Returns true if it
-     * matched, or false if not. Assumes EmptyBody is okay as well.
-     *
-     * JspAttributeAndBody ::= ( '>' # S? ( '<jsp:attribute' NamedAttributes )?
-     * '<jsp:body' ( JspBodyBody | <TRANSLATION_ERROR> ) S? ETag )
+     *先留着吧
      * */
     parseJspAttributeAndBody() {
         let result = false;
