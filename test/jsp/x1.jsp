@@ -10,7 +10,7 @@ node 后台传输数据
 --%>
 <jsp:include page="x2.jsp"></jsp:include>
 <c:if test="${5>3&&list1!=null||num1=='1'}">
-    <P>if 语句生效了</P>
+    <P>if 语句生效了333</P>
 </c:if>
 <c:forEach items="${list1}" var="item">
     <li>
