@@ -9,6 +9,7 @@ const Ut = require("./Ut");
 const Mark = require("./Mark");
 const Attributes = require("./taglib/Attributes")
 const TagInfo = require("./taglib/TagInfo");
+const jspErr = require("./err/Err");
 
 const JSP_BODY_CONTENT_PARAM = "JSP_BODY_CONTENT_PARAM"
 
@@ -26,6 +27,7 @@ class Parser {
      * @return {Node.Nodes} page 对象，
      */
     static parse(path, reader, parent) {
+        // throw  new Error ("bbbbbbbbbbbb");
         let parser = new Parser(reader);
         let root = new Node.Root(reader.mark(), parent);
         let i = 0;
@@ -233,6 +235,7 @@ class Parser {
 
 
     parseBody(parent, tag, bodyType) {
+        // throw  new Error ("parsebody");
         this.reader.showP("Parser.parseBody  " + tag + " " + bodyType + " " + (bodyType == TagInfo.BODY_CONTENT_JSP))
         let c = 0;
         while (this.reader.hasMoreInput() && (++c) <= 10) {
@@ -255,7 +258,8 @@ class Parser {
     parseParam(parent) {
         if (!this.reader.matches("<jsp:param")) {
             //todo 抛出异常，jsperr
-            throw new Error("param err");
+            jspErr.err(this.reader.mark())
+
         }
         let attrs = this.parseAttributes();
         this.reader.skipSpaces();

@@ -10,7 +10,7 @@ const StringWriter = require("./writer/StringWriter");
 const ServletWriter = require("./writer/ServletWriter")
 
 class Compiler {
-    constructor(baseDir) {
+    constructor (baseDir) {
         this.baseDir = baseDir
     }
 
@@ -31,7 +31,7 @@ class Compiler {
             this.doParser(filename, null, out);
         }
         catch (e) {
-            console.log(e)
+            console.log (e.message)
         }
         finally {
             return out.toString();
@@ -39,8 +39,8 @@ class Compiler {
 
     }
 
-    getReader(filename) {
-        let reader = new JspReader(this.baseDir, filename);
+    getReader (filename) {
+        let reader = new JspReader (this.baseDir, filename);
         return reader;
     }
 

@@ -8,7 +8,7 @@ node 后台传输数据
            {a: [{"x": "dd"}, [1, 2, 3]]},
        }
 --%>
-<jsp:include page="x2.jsp"></jsp:include>
+<jsp:include page="x2.jsp">是</jsp:include>
 <c:if test="${5>3&&list1!=null||num1=='1'}">
     <P>if 语句生效了333</P>
 </c:if>

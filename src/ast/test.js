@@ -15,3 +15,9 @@ var data = {
 var ex = new ASTexcute (data);
 ex.excute (program);
 // console.log(JSON.stringify(ast))
+
+
+// let el = "console.log('xxxxx',a,this.a),a+b";
+// var data = { a: 5, b: 3 };
+// let va = ELparser.getValueByLocal (el, data);
+// console.log (va);// 8

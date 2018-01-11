@@ -1,38 +1,38 @@
 /**
  * Created by ghy on 2017/11/17.
  */
-const path = require("path");
-const fs = require("fs");
+const path = require ("path");
+const fs = require ("fs");
 
-const Ut = require("./Ut");
-const Mark = require("./Mark");
-const TagInfo = require("./taglib/TagInfo");
+const Ut = require ("./Ut");
+const Mark = require ("./Mark");
+const TagInfo = require ("./taglib/TagInfo");
 
 class JspReader {
-    constructor(baseDir, fname) {
+    constructor (baseDir, fname) {
         this.currFileId = 0;
         this.size = 0;
         this.singleFile = false;
         this.sourceFiles = [];
-        this.pushFile(baseDir, fname, "utf-8");
+        this.pushFile (baseDir, fname, "utf-8");
     }
 
-    getFile(fileId) {
+    getFile (fileId) {
         return this.sourceFiles[fileId];
     }
 
-    showP(msg) {
-        console.log(msg, this.current.line, this.current.col, this.current.cursor)
+    showP (msg) {
+        console.log (msg, this.current.line, this.current.col, this.current.cursor)
     }
 
-    matches(str) {
-        let mark = this.mark();
+    matches (str) {
+        let mark = this.mark ();
         let ch = "";
         let i = 0;
         while (i < str.length) {
-            ch = this.nextChar();
-            if (ch != str.charAt(i++)) {
-                this.reset(mark);
+            ch = this.nextChar ();
+            if (ch != str.charAt (i++)) {
+                this.reset (mark);
                 return false;
             }
         }
@@ -43,13 +43,13 @@ class JspReader {
      *
      * @return {Boolean}
      */
-    hasMoreInput() {
+    hasMoreInput () {
 
         if (this.current.cursor >= this.current.stream.length) {
             if (this.singleFile) {
                 return false
             }
-            while (this.popFile()) {
+            while (this.popFile ()) {
                 if (this.current.cursor < this.current.stream.length) {
                     return true;
                 }
@@ -59,8 +59,8 @@ class JspReader {
         return true;
     }
 
-    nextChar() {
-        if (!this.hasMoreInput()) {
+    nextChar () {
+        if (!this.hasMoreInput ()) {
             return null;
         }
         let ch = this.current.stream[this.current.cursor];
@@ -68,79 +68,95 @@ class JspReader {
         if (ch == '\n') {
             this.current.line++;
             this.current.col = 0;
+            this.current.line_cursor_map[this.current.line] = this.current.cursor;
         } else {
             this.current.col++;
         }
         return ch;
     }
 
-    pushChar() {
+    pushChar () {
         this.current.cursor--;
         this.current.col--;
     }
 
-    getText(start, stop) {
-        let oldstart = this.mark();
-        this.reset(start);
+// 强验证
+    getText (start, stop) {
+        let oldstart = this.mark ();
+        this.reset (start);
         let ret = "";
-        let b=0;
-        while (!stop.equals(this.mark())) {
-            ret += this.nextChar();
+        let b = 0;
+        while (this.hasMoreInput () && !stop.equals (this.mark ())) {
+            ret += this.nextChar ();
             b++;
         }
-        this.reset(oldstart);
+        this.reset (oldstart);
         return ret;
     }
 
-    pushFile(baseDir, fname, encoding, reader) {
+    // 强验证
+    getTextline (start, endLine) {
+        let oldstart = this.mark ();
+        this.reset (start);
+        let ret = "";
+        let b = 0;
+        while (this.hasMoreInput () && (endLine+1) != this.mark ().line) {
+            ret += this.nextChar ();
+            b++;
+        }
+        this.reset (oldstart);
+        return ret;
+    }
+
+    pushFile (baseDir, fname, encoding, reader) {
         let longName = fname;
-        let fileid = this.registerSourceFile(longName);
+        let fileid = this.registerSourceFile (longName);
         if (fileid == -1) {
             //TODO 报错异常
         }
         this.currFileId = fileid;
-        let absPath = path.join(baseDir, longName)
-        console.log(absPath)
-        let fileStr = fs.readFileSync(absPath, "utf-8");
-        let charArray = fileStr.split("");
+        let absPath = path.join (baseDir, longName)
+        console.log (absPath)
+        let fileStr = fs.readFileSync (absPath, "utf-8");
+        let charArray = fileStr.split ("");
         try {
             if (this.current == null) {
 
-                this.current = new Mark(this, charArray, fileid, this.getFile(fileid), "utf-8")
+                this.current = new Mark (this, charArray, fileid, this.getFile (fileid), "utf-8")
             } else {
-                this.current.pushStream(charArray, fileid, this.getFile(fileid), longName, "utf-8");
+                this.current.pushStream (charArray, fileid, this.getFile (fileid), longName, "utf-8");
             }
-            console.log(charArray.length)
+            console.log (charArray.length)
         }
         catch (e) {
-            console.log(e);
+            console.log (e);
         }
     }
 
-    matchesETag(tagName) {
-        let mark = this.mark();
-        if (!this.matches("</" + tagName)) {
+    matchesETag (tagName) {
+        let mark = this.mark ();
+        if (!this.matches ("</" + tagName)) {
             return false;
         }
         this.skipSpaces();
         if (this.nextChar() == '>') {
             return true;
         }
-        this.reset(mark);
+        this.reset (mark);
         return false;
     }
 
-    popFile() {
+    popFile () {
         if (this.current == null || this.currFileId < 0) {
             return false;
         }
-        let fname = this.getFile(this.currFileId);
-        this.currFileId = this.unregisterSourceFile(fname);
+        let fname = this.getFile (this.currFileId);
+        this.currFileId = this.unregisterSourceFile (fname);
         if (this.currFileId < -1) {
             //todo err
-            console.error("jsp.error.file.not.registered", fname)
+            console.error ("jsp.error.file.not.registered", fname)
         }
-        let previous = this.current.popStream();
+        let previous = this.current.popStream ();
         if (previous != null) {
             this.master = this.current.baseDir;
             this.current = previous;
@@ -149,58 +165,58 @@ class JspReader {
         return false;
     }
 
-    mark() {
-        return Mark.newMark(this.current);
+    mark () {
+        return Mark.newMark (this.current);
     }
 
-    reset(mark) {
-        this.current = Mark.newMark(mark);
+    reset (mark) {
+        this.current = Mark.newMark (mark);
     }
 
-    peekChar() {
-        if (!this.hasMoreInput()) {
+    peekChar () {
+        if (!this.hasMoreInput ()) {
             return -1;
         }
         return this.current.stream[this.current.cursor];
     }
 
-    registerSourceFile(fileName) {
-        if (Ut.arrayContain(this.sourceFiles, fileName)) {
+    registerSourceFile (fileName) {
+        if (Ut.arrayContain (this.sourceFiles, fileName)) {
             return -1;
         } else {
-            this.sourceFiles.push(fileName);
+            this.sourceFiles.push (fileName);
         }
         return this.sourceFiles.length - 1;
     }
 
-    unregisterSourceFile(fileName) {
-        let index = Ut.getIndexFromArray(this.sourceFiles, fileName)
+    unregisterSourceFile (fileName) {
+        let index = Ut.getIndexFromArray (this.sourceFiles, fileName)
         if (index < 0) {
             return -1;
         }
-        this.sourceFiles.splice(index, 1);
+        this.sourceFiles.splice (index, 1);
         this.size--;
         return this.sourceFiles.length - 1;
     }
 
-    skipUntilETag() {
+    skipUntilETag () {
 
     }
 
-    parseToken() {
+    parseToken () {
         let ret = "";
-        this.skipSpaces();
-        if (!this.hasMoreInput()) {
+        this.skipSpaces ();
+        if (!this.hasMoreInput ()) {
             return "";
         }
-        let ch = this.peekChar();
-        if (!this.isDelimiter()) {
-            while (!this.isDelimiter()) {
-                ch = this.nextChar();
+        let ch = this.peekChar ();
+        if (!this.isDelimiter ()) {
+            while (!this.isDelimiter ()) {
+                ch = this.nextChar ();
                 if (ch == '\\') {
-                    if (this.peekChar() == '"' || this.peekChar() == '\''
-                        || this.peekChar() == '>' || this.peekChar() == '%') {
-                        ch = nextChar();
+                    if (this.peekChar () == '"' || this.peekChar () == '\''
+                        || this.peekChar () == '>' || this.peekChar () == '%') {
+                        ch = nextChar ();
                     }
                 }
                 ret += ch;
@@ -210,20 +226,20 @@ class JspReader {
         return ret;
     }
 
-    isDelimiter() {
-        if (!this.isSpace()) {
-            let ch = this.peekChar();
+    isDelimiter () {
+        if (!this.isSpace ()) {
+            let ch = this.peekChar ();
             if (ch == '=' || ch == '>' || ch == '"' || ch == '\'' || ch == '/') {
                 return true;
             }
             if (ch == '-') {
-                let mark = this.mark();
-                if (((ch = this.nextChar()) == '>')
-                    || ((ch == '-') && (this.nextChar() == '>'))) {
-                    this.reset(mark);
+                let mark = this.mark ();
+                if (((ch = this.nextChar ()) == '>')
+                    || ((ch == '-') && (this.nextChar () == '>'))) {
+                    this.reset (mark);
                     return true;
                 } else {
-                    this.reset(mark);
+                    this.reset (mark);
                     return false;
                 }
             }
@@ -238,17 +254,17 @@ class JspReader {
      * @param null
      * @return {Ineger}
      */
-    skipSpaces() {
+    skipSpaces () {
         let i = 0;
-        while (this.hasMoreInput() && this.isSpace()) {
+        while (this.hasMoreInput () && this.isSpace ()) {
             i++;
-            this.nextChar();
+            this.nextChar ();
         }
         return i;
     }
 
-    isSpace() {
-        return this.peekChar() <= ' ';
+    isSpace () {
+        return this.peekChar () <= ' ';
     }
 
     /**
@@ -257,20 +273,20 @@ class JspReader {
      * @param limit {String} 需要匹配得结束字符串 比如 单引号 '\''，或者双引号 '"'
      * @return {Mark} 结束位置
      */
-    skipUntilIgnoreEsc(limit) {
+    skipUntilIgnoreEsc (limit) {
         let ret = null;
         let limlen = limit.length;
         let ch;
         let prev = 'x'; // Doesn't matter
         outer:
-            for (ret = this.mark(), ch = this.nextChar(); ch != null; ret = this.mark(), prev = ch, ch = this.nextChar()) {
+            for (ret = this.mark (), ch = this.nextChar (); ch != null; ret = this.mark (), prev = ch, ch = this.nextChar ()) {
                 if (ch == '\\' && prev == '\\') {
                     ch = null;
-                } else if (ch == limit.charAt(0) && prev != '\\') {
+                } else if (ch == limit.charAt (0) && prev != '\\') {
                     inter:
                         for (let i = 1; i < limlen; i++) {
-                            if (this.peekChar() == limit.charAt(i)) {
-                                this.nextChar();
+                            if (this.peekChar () == limit.charAt (i)) {
+                                this.nextChar ();
                             } else {
                                 continue outer
                             }
