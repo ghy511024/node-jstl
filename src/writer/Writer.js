@@ -26,7 +26,6 @@ class Writer extends Abstract {
         if (x != null) {
             this.print(x);
         }
-        console.log("换行操作")
         this.write(lineSeparator);
     }
 

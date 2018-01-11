@@ -1,7 +1,12 @@
 {
-  "name": "jstl",
+  "name": "node-jstl",
   "version": "0.0.1",
+  "license": "MIT",
   "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wycats/handlebars.js.git"
+  },
   "devDependencies": {
     "esprima": "^4.0.0"
   }

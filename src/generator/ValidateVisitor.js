@@ -22,7 +22,7 @@ class ValidateVisitor extends Node.Visitor {
 
     _vELExpression(n) {
         let expstr = n.text;
-        console.log(expstr);
+        // console.log(expstr);
     }
 }
 

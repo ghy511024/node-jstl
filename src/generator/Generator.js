@@ -1,4 +1,4 @@
-const Compiler = require("../Compiler")
+const Compiler = require("../compile/Compiler")
 const GenerateVisitor = require("./GenerateVisitor");
 const GenerateVisitor_tree = require("./GenerateVisitor_tree");
 const FileWriter = require("../../src/writer/FileWriter");

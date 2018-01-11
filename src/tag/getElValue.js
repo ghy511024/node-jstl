@@ -11,9 +11,7 @@ class getElValue {
         })
         let tmpData = this.data||{};
         let ret_value = null;
-        console.log("elvalue:", exp_str);
       var exp_array=  exp_str.split(".");
-        console.log(exp_str)
         for (let i = 0; i < exp_array.length; i++) {
             var c_key = exp_array[i];
             ret_value = tmpData[c_key];
@@ -23,7 +21,6 @@ class getElValue {
             }
             tmpData = ret_value;
         }
-        console.log(ret_value);
         return ret_value;
     }
 }

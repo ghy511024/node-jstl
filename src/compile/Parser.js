@@ -3,13 +3,13 @@
  */
 
 
-const Node = require("./node/Node-Api");
+const Node = require("../node/Node-Api");
 const JspReader = require("./JspReader");
 const Ut = require("./Ut");
 const Mark = require("./Mark");
-const Attributes = require("./taglib/Attributes")
-const TagInfo = require("./taglib/TagInfo");
-const jspErr = require("./err/Err");
+const Attributes = require("../taglib/Attributes")
+const TagInfo = require("../taglib/TagInfo");
+const jspErr = require("../err/Err");
 
 const JSP_BODY_CONTENT_PARAM = "JSP_BODY_CONTENT_PARAM"
 
@@ -27,12 +27,11 @@ class Parser {
      * @return {Node.Nodes} page 对象，
      */
     static parse(path, reader, parent) {
-        // throw  new Error ("bbbbbbbbbbbb");
         let parser = new Parser(reader);
         let root = new Node.Root(reader.mark(), parent);
         let i = 0;
         while (reader.hasMoreInput()) {
-            reader.showP("外层解析" + i + "--begin")
+            // reader.showP("外层解析" + i + "--begin")
             parser.parseElements(root);
             i++;
         }
@@ -100,7 +99,6 @@ class Parser {
             }
             ttext += ch;
         }
-        console.log("parseTemplateText:", ttext);
         new Node.TemplateText(ttext, this.start, parent);
     }
 
@@ -126,7 +124,7 @@ class Parser {
     }
 
     parseCustomTag(parent) {
-        this.reader.showP("Parser.parseCustomTag")
+        // this.reader.showP("Parser.parseCustomTag")
         if (this.reader.peekChar() != '<') {
             return false;
         }
@@ -143,7 +141,6 @@ class Parser {
 
         let attrs = this.parseAttributes();
         let uri = "";
-        // console.log(attrs.data)
         this.reader.skipSpaces();
         if (this.reader.matches("/>")) {
             new Node.CustomTag(
@@ -188,7 +185,8 @@ class Parser {
                 ch = this.reader.nextChar();
             }
             if (ch == null) {
-                console.error("Parser.parseELExpression", typeEL)
+                //todo err
+                // console.error("Parser.parseELExpression", typeEL)
             }
             if (ch == '"') {
                 doubleQuoted = !doubleQuoted;
@@ -206,7 +204,7 @@ class Parser {
     }
 
     parseOptionalBody(parent, tagName, bodyType) {
-        this.reader.showP("Parser.parseOptionalBody")
+        // this.reader.showP("Parser.parseOptionalBody")
         if (this.reader.matches("/>")) {
             // EmptyBody
             return;
@@ -236,7 +234,7 @@ class Parser {
 
     parseBody(parent, tag, bodyType) {
         // throw  new Error ("parsebody");
-        this.reader.showP("Parser.parseBody  " + tag + " " + bodyType + " " + (bodyType == TagInfo.BODY_CONTENT_JSP))
+        // this.reader.showP("Parser.parseBody  " + tag + " " + bodyType + " " + (bodyType == TagInfo.BODY_CONTENT_JSP))
         let c = 0;
         while (this.reader.hasMoreInput() && (++c) <= 10) {
             if (this.reader.matchesETag(tag)) {
@@ -306,17 +304,14 @@ class Parser {
     parseAttributes() {
         let attribute = new Attributes();
         this.reader.skipSpaces();
-        console.log("开始解析attribute")
         while (this.parseAttribute(attribute)) {
             this.reader.skipSpaces();
         }
-        console.log("结束解析attribute")
         return attribute;
     }
 
     parseAttribute(attrs) {
         let qName = this.parseName();
-        console.log("qname:", qName)
         if (qName == null) {
             return false;
         }
@@ -328,18 +323,17 @@ class Parser {
         }
         this.reader.skipSpaces();
         if (!this.reader.matches("=")) {
-            console.error("attribute.noequal")
+            //todo err
+            // console.error("attribute.noequal")
         }
         this.reader.skipSpaces();
         let quote = this.reader.nextChar();
         if (quote != '\'' && quote != '"') {
             //todo 抛出异常
-            console.error("quote err")
+            // console.error("quote err")
         }
         let watchString = quote;// java jsp 中 还有 <%=%> 这种情况（此时 watchString=%>"），js 版本中不考虑了
-        console.log("quoto", quote)
         let attrValue = this.parseAttributeValue(watchString);
-        console.log("attrValue", localName, qName, "CDATA", attrValue);
         attrs.addAttribute(localName, qName, "CDATA", attrValue)
         return true;
     }
@@ -349,11 +343,10 @@ class Parser {
         let stop = this.reader.skipUntilIgnoreEsc(watch);
         if (stop == null) {
             //todo 抛出异常
-            console.error("stop err");
+            // console.error("stop err");
         }
         //todo 需要转义 parseQuoted （这一版先不做，不影响功能）
         // let ret = this.parseQuoted(this.reader.getText(start, stop));
-        console.log("位置：", start.getInfo(), stop.getInfo())
         let ret = this.reader.getText(start, stop);
 
         return ret;

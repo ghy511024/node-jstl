@@ -25,9 +25,3 @@ class CharArrayWriter extends Writer {
         return this.buf.join ("");
     }
 }
-let m = new CharArrayWriter ();
-m.write (1);
-m.write (4);
-m.write (1);
-m.write (6);
-console.log (m.toString ())

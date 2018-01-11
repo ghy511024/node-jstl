@@ -184,7 +184,7 @@ class AstCompiler {
             default:
                 break;
         }
-        console.log (left_val, right_val, operator, value)
+        // console.log (left_val, right_val, operator, value)
         return value;
     }
 

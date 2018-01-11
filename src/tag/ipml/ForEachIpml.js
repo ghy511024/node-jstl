@@ -68,9 +68,7 @@ class ForEachIpml extends TagSupport {
         this.deferredExpression = null;
 
         // 将设置的 ${list} el 表达式赋值给 pagecontext
-        console.log (this.items, "赋值 begin")
         this.prepare ();
-        console.log (this.items, "赋值 end")
         // 设置了开始标签，直接从开始标签起步
         this.discardIgnoreSubset (this.begin);
         if (this.hasNext ()) {

@@ -10,7 +10,7 @@ const PageContext = require("../ctx/PageContext");
 // tag 解析实现类
 const ForEachIpml = require("../tag/ipml/ForEachIpml");
 const IfIpml = require("../tag/ipml/IfIpml");
-const Parser = require("../Parser");
+const Parser = require("../compile/Parser");
 
 class GenerateVisitor extends Node.Visitor {
     constructor(out, pageContext, compiler) {
@@ -28,7 +28,6 @@ class GenerateVisitor extends Node.Visitor {
      * 覆盖父类visit 抽象方-----+-+法
      */
     visit(n) {
-        console.log(n.name)
         if (n instanceof Node.IncludeAction) {
             this._vIncludeAction(n);
         }
@@ -50,8 +49,8 @@ class GenerateVisitor extends Node.Visitor {
      * 不知道是不是拆出去好一点，先不拆，规模不大
      */
     _vCustomTag(n) {
-        console.log("_vCustomTag")
-        console.log(n.qName, n.prefix, n.localName, n.uri)
+        // console.log("_vCustomTag")
+        // console.log(n.qName, n.prefix, n.localName, n.uri)
         if (n.localName == "forEach") {
             let eachtag = new ForEachIpml();
             eachtag.setPageContext(this.pageContext);

@@ -53,7 +53,6 @@ class PageContext {
         exp.replace (reg, function (_, $1) {
             exp_str = $1;
         })
-        console.log (exp_str, "上下文")
         return ELparser.getValue (exp_str, tmpData);
     }
 }
