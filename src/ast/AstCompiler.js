@@ -8,14 +8,13 @@ class AstCompiler {
     excute (program) {
         // let program = 'a>b&&c==0';
         let ast = esprima.parse (program);
-        // console.log (JSON.stringify (ast))
         let astBody = ast.body || [];
         let value;
         if (astBody.length > 0) {
             let expression = astBody[0].expression;
             // console.log ("express:", expression)
             value = this.getvalue (expression, this.ctx);
-            // console.log (val)
+            // console.log (value)
         }
         return value;
     }

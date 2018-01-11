@@ -84,7 +84,6 @@ class GenerateVisitor extends Node.Visitor {
      * include 实现，
      * */
     _vIncludeAction(n) {
-        console.log("include 页面：", n.attrs.getValue("page"))
         let reader = this.compiler.getReader(n.attrs.getValue("page"));
         let pageNodes = Parser.parse(n.attrs.getValue("page"), reader, null)
         pageNodes.visit(this);
