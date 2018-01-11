@@ -17,18 +17,18 @@ node 后台传输数据
     <li>
         <p>外层循环</p>
         
-            <span> 内层循环,1</span>
+            <span> 内层循环,0</span>
         
-            <span> 内层循环,true</span>
+            <span> 内层循环,0</span>
         
     </li>
 
     <li>
         <p>外层循环</p>
         
-            <span> 内层循环,[Object]</span>
+            <span> 内层循环,0</span>
         
-            <span> 内层循环,[Array]</span>
+            <span> 内层循环,0</span>
         
     </li>
 

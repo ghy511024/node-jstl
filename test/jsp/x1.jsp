@@ -16,7 +16,7 @@ node 后台传输数据
     <li>
         <p>外层循环</p>
         <c:forEach items="${item.a}" var="li">
-            <span> 内层循环,${li}</span>
+            <span> 内层循环,${li[0]}</span>
         </c:forEach>
     </li>
 </c:forEach>

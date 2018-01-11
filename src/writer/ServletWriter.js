@@ -3,12 +3,13 @@ const SPACES = "                          ";
 /**
  * writer 本来应该是最后再写的，前面应该把各种约定定义好
  * */
-const Writer = require ("./Writer");
+const Writer = require("./Writer");
+
 class ServletWriter {
     /**
      * @param writer {StringWriter}
      * */
-    constructor (writer) {
+    constructor(writer) {
         this.indent = 0;
         this.vertual_indent = 0;
         this.javaLine = 1;
@@ -17,50 +18,56 @@ class ServletWriter {
         }
     }
 
-    pushIndent () {
+    pushIndent() {
         this.vertual_indent += TAB_WIDTH;
         if (this.vertual_indent >= 0 && this.vertual_indent < SPACES.length) {
             this.indent = this.vertual_indent;
         }
     }
 
-    print (str) {
-        this.writer.print (str);
+    print(str) {
+        this.writer.print(str);
     }
 
-    printin () {
-        this.writer.print (SPACES.substring (0, this.indent));
+    printin() {
+        this.writer.print(SPACES.substring(0, this.indent));
 
     }
 
-    println (s) {
+    println(s) {
         this.javaLine++;
-        this.writer.print (s)
+        this.writer.print(s)
     }
 
     /**
      * 尾部换行打印
      * */
-    printil (s) {
+    printil(s) {
         this.javaLine++;
-        this.writer.print (SPACES.substring (0, this.indent));
-        this.writer.println (s)
+        this.writer.print(SPACES.substring(0, this.indent));
+        this.writer.println(s)
     }
 
-    printlt () {
+    printlt() {
 
     }
 
-    printMultiLn (S) {
+    printMultiLn(S) {
         let index = 0;
-        while ((index = s.indexOf ('\n', index) > -1)) {
+        while ((index = s.indexOf('\n', index) > -1)) {
             this.javaLine++;
             index++;
         }
-        this.writer.print (s);
+        this.writer.print(s);
     }
 
+    toString() {
+        return this.writer.toString();
+    }
+
+
 }
+
 (function () {
 // let path=path.join()
 //     let swriter = new StringWriter ();
@@ -70,6 +77,6 @@ class ServletWriter {
     // out.printil ("sdfsdf");
     // out.print (")");
     // console.log (swriter.toString ())
-}) ()
+})()
 
 module.exports = ServletWriter;
