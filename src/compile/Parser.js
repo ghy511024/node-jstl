@@ -9,7 +9,7 @@ const Ut = require("./Ut");
 const Mark = require("./Mark");
 const Attributes = require("../taglib/Attributes")
 const TagInfo = require("../taglib/TagInfo");
-const jspErr = require("../err/Err");
+const jerr = require("../err/Err");
 
 const JSP_BODY_CONTENT_PARAM = "JSP_BODY_CONTENT_PARAM"
 
@@ -186,7 +186,7 @@ class Parser {
             }
             if (ch == null) {
                 //todo err
-                // console.error("Parser.parseELExpression", typeEL)
+                jerr.err(this.reader.mark(),"parser.parseELExpression")
             }
             if (ch == '"') {
                 doubleQuoted = !doubleQuoted;
@@ -205,13 +205,15 @@ class Parser {
 
     parseOptionalBody(parent, tagName, bodyType) {
         // this.reader.showP("Parser.parseOptionalBody")
+
         if (this.reader.matches("/>")) {
             // EmptyBody
             return;
         }
         if (!this.reader.matches(">")) {
-            //todo 抛出异常，未知标签
+            jerr.err(this.reader.mark(),"parser.parseOptionalBody")
         }
+        this.reader.skipSpaces();
         if (this.reader.matchesETag(tagName)) {
             // EmptyBody
             return;
@@ -255,8 +257,7 @@ class Parser {
      * */
     parseParam(parent) {
         if (!this.reader.matches("<jsp:param")) {
-            //todo 抛出异常，jsperr
-            jspErr.err(this.reader.mark())
+            jerr.err(this.reader.mark(),"parser.parseParam err")
 
         }
         let attrs = this.parseAttributes();
@@ -275,15 +276,15 @@ class Parser {
             } else if (this.reader.matchesOptionalSpacesFollowedBy("<jsp:attribute")) {
                 this.parseNamedAttributes(parent);
                 if (!this.reader.matchesETag(tag)) {
-                    //todo 抛出语法异常
+                    jerr.err(this.reader.mark(),"parser.parseEmptyBody err")
                 }
             }
             else {
-                //todo 抛出语法异常
+                jerr.err(this.reader.mark(),"parser.parseEmptyBody err")
             }
         }
         else {
-            //todo 抛出语法异常
+            jerr.err(this.reader.mark(),"parser.parseEmptyBody err")
         }
     }
 
@@ -293,7 +294,7 @@ class Parser {
             let start = this.reader.mark();
             let attrs = this.parseAttributes();
             if (attr == null || attrs.getValue("name") == null) {
-                //todo 抛出语法异常
+                jerr.err(this.reader.mark(),"parser.parseNamedAttributes err")
             }
         }
     }
@@ -323,14 +324,12 @@ class Parser {
         }
         this.reader.skipSpaces();
         if (!this.reader.matches("=")) {
-            //todo err
-            // console.error("attribute.noequal")
+            jerr.err(this.reader.mark(),"parser.parseAttribute err")
         }
         this.reader.skipSpaces();
         let quote = this.reader.nextChar();
         if (quote != '\'' && quote != '"') {
-            //todo 抛出异常
-            // console.error("quote err")
+            jerr.err(this.reader.mark(),"parser.parsequote err")
         }
         let watchString = quote;// java jsp 中 还有 <%=%> 这种情况（此时 watchString=%>"），js 版本中不考虑了
         let attrValue = this.parseAttributeValue(watchString);
@@ -342,8 +341,7 @@ class Parser {
         let start = this.reader.mark();
         let stop = this.reader.skipUntilIgnoreEsc(watch);
         if (stop == null) {
-            //todo 抛出异常
-            // console.error("stop err");
+            jerr.err(this.reader.mark(),"parser.parseAttributeValue err")
         }
         //todo 需要转义 parseQuoted （这一版先不做，不影响功能）
         // let ret = this.parseQuoted(this.reader.getText(start, stop));

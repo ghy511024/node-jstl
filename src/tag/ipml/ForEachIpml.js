@@ -106,10 +106,13 @@ class ForEachIpml extends TagSupport {
      * */
     prepare () {
         if (this.rawItems != null) {
-            if (typeof this.rawItems == "string") {
+            if (typeof this.rawItems == "string" && this.rawItems.indexOf ("${") != -1) {
                 this.rawItems = this.pageContext.getElValue (this.rawItems)
             }
+            // 数据转换
+            this.rawItems = this.supportedTypeForEachIterator (this.rawItems)
             this.items = this.rawItems;
+
         } else {
             // 没有items 就使用begin ,end
             this.items = this.beginEndForEachIterator ();
@@ -141,6 +144,29 @@ class ForEachIpml extends TagSupport {
 
     getCurrent () {
         return this.item;
+    }
+
+    /**
+     * 遍历数据类型转换
+     * @param o{Object}
+     * */
+    supportedTypeForEachIterator (o) {
+        let ret = [];
+        if (o instanceof Array) {
+            ret = o;
+        } else if (typeof o == "object") {
+            for (let key in o) {
+                if (typeof o[key] !== "function") {
+                    let obj = { key: key, value: o[key] };
+                    ret.push (obj);
+                }
+            }
+        } else if (typeof o == "string") {
+            ret = o.split (",")
+        } else {
+
+        }
+        return ret;
     }
 }
 

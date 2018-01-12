@@ -61,11 +61,8 @@ class Mark {
 // 涉及到
     resetLine (line) {
         this.line = line;
-        this.cursor = this.line_cursor_map[line] || this.cursor;
-    }
-
-    setCol () {
-
+        this.col = 1;
+        this.cursor = this.line_cursor_map[line] != null ? this.line_cursor_map[line] : this.cursor;
     }
 
 
